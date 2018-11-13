@@ -1,0 +1,30 @@
+.wrongData {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 22px 30px;
+  color: red;
+  border-radius: 3px;
+}
+
+.closeWrong {
+  width: 10px;
+  height: 10px;
+  background-image: url("./img/close.png");
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-size: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .wrongData {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    min-width: 216px;
+    text-align: center;
+  }
+}

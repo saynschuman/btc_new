@@ -1,0 +1,8 @@
+PUT https://atc-bl.nadzor.online/bl198765/investor/profile/changePassword HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTU0MGQ3OTc3OWQxNmViMTU3ZWY3MyIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImludmVzdG9yIiwiaWF0IjoxNTQxODY1MDU5LCJleHAiOjE1NDE4Njg2NTl9.Zoj_p9W0N3StogOQHwBX9QKocAs1H_x-IMbsNBF6JMY  
+Content-Type: application/json
+
+{
+	"oldPassword": "saynschuman",
+	"newPassword": "saynschuman123"
+}
