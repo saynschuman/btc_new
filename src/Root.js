@@ -7,7 +7,11 @@ export default () => {
   return (
     <Router primary={false}>
       <Login default />
-      <RootInvestor path="/investor" />
+      <RootInvestor path="/investor">
+        <InvestorHomePage default />
+        <InvestorSettings path="buy" />
+        <InvestorPrivateSettings path="settings" />
+      </RootInvestor>
     </Router>
   )
 }

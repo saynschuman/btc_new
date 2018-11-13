@@ -6,9 +6,6 @@ const initialState = {
   isLoading: false,
   isLoaded: false,
   success: null,
-  dataIsLoading: false,
-  dataIsLoaded: false,
-  data: [],
 }
 
 export default function(state = initialState, action) {
