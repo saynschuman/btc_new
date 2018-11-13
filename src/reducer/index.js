@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux'
-import pin from '../modules/pin'
+import loginInvestor from '../modules/loginInvestor'
+import investorHomePageData from '../modules/investorHomePageData'
+
 export default combineReducers({
-  pin,
+  loginInvestor,
+  investorHomePageData,
 })
