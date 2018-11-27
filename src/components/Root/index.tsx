@@ -1,31 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import IStore from '../../store/storeTypes'
-import {User} from '../../store/storeTypes'
+import { Router } from '@reach/router'
+import Login from '../../components/pages/investor/Login'
+import HomePage from '../../components/pages/investor/HomePage'
 
-interface OwnProps {
-    id: number
-    name: string
-}
-
-interface StateProps {
-    count: number
-}
-
-const Root: React.SFC<OwnProps & StateProps> = props => {
+const Root: React.FunctionComponent = () => {
     return (
-        <div>
-            <div className="asd">{props.id}</div>
-            <div className="asd">{props.name}</div>
-        </div>
+        <Router primary={false}>
+            <Login default />
+            <HomePage path={'/homepage'}/>
+        </Router>
     )
 }
 
-const mapStateToProps = (state: IStore): User => {
-    return {
-        id: state.user.id,
-        name: state.user.name
-    }
-}
-
-export default connect(mapStateToProps)(Root)
+export default Root

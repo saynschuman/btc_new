@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
         <Provider store={store}>
-            <Root count={1}/>
+            <Root />
         </Provider>
     );
   }
