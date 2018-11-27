@@ -1,8 +1,5 @@
-export interface User {
-    id: number
-    name: string
-}
+import {State} from './modules/reducer'
 
 export default interface IStore {
-    user: User
+    reducer: State
 }

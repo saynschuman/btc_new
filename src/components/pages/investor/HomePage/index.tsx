@@ -1,26 +1,50 @@
 import React from 'react'
-import Cookies from 'universal-cookie'
-
-const cookies = new Cookies();
+import checkToken from '../../../../helpers/checkToken'
+import {connect} from 'react-redux'
+import {increment, decrement} from '../../../../store/modules/reducer'
+import {State} from '../../../../store/modules/reducer'
+import IStore from '../../../../store/storeTypes'
 
 interface OwnProps {
     path: string
 }
 
-class HomePage extends React.Component<OwnProps> {
+interface StateProps {
+    count: number
+}
+
+interface DispatchProps {
+    increment(): void
+    decrement(): void
+}
+
+class HomePage extends React.Component<OwnProps & StateProps & DispatchProps> {
     componentDidMount(): void {
-        window.setInterval(this.checkToken, 1000)
+        checkToken()
     }
-    checkToken = () => {
-        if(cookies.get('token') === undefined) {
-            window.location.replace('/')
-        }
-    }
-    render(): JSX.Element {
+    public render(): JSX.Element {
         return (
-            <div>You are logged!</div>
+            <div>
+                <div>You are logged!</div>
+                <h1>{this.props.count}</h1>
+                <button onClick={this.props.increment}>increment</button>
+                <button onClick={this.props.decrement}>decrement</button>
+            </div>
         )
     }
 }
 
-export default HomePage
+const mapStateToProps = (state: IStore): State => {
+    return {
+        count: state.reducer.count
+    }
+}
+
+const mapDispatchToProps = (dispatch): DispatchProps => {
+    return {
+        increment: () => dispatch(increment('', null)),
+        decrement: () => dispatch(decrement('', null))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

@@ -9,12 +9,12 @@ interface OwnProps {
 
 class Login extends React.Component<OwnProps> {
     login = () => {
-        cookies.set('token', '111', {expires: new Date(Date.now() + 10000)})
+        cookies.set('token', '111', {expires: new Date(Date.now() + 10000 * 6)})
         window.location.replace('/homepage')
     }
     render() {
         return (
-                <span onClick={this.login}>login</span>
+            <span onClick={this.login}>login</span>
         )
     }
 }
