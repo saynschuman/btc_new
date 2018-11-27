@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>gitlab</div>
+        <div>123</div>
       </div>
     );
   }
