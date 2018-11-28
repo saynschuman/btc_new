@@ -3,6 +3,11 @@
     src: url("./fonts/GothaProReg.otf");
 }
 
+@font-face {
+    font-family: gothamProMed;
+    src: url("./fonts/GothaProMed.otf");
+}
+
 body {
     margin: 0;
     padding: 0;
