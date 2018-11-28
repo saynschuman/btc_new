@@ -1,12 +1,12 @@
-/*@font-face {*/
-    /*font-family: gothamProReg;*/
-    /*src: url("./fonts/GothaProReg.otf");*/
-/*}*/
+@font-face {
+    font-family: gothamProReg;
+    src: url("./fonts/GothaProReg.otf");
+}
 
-/*@font-face {*/
-    /*font-family: gothamProMed;*/
-    /*src: url("./fonts/GothaProMed.otf");*/
-/*}*/
+@font-face {
+    font-family: gothamProMed;
+    src: url("./fonts/GothaProMed.otf");
+}
 
 body {
     margin: 0;
