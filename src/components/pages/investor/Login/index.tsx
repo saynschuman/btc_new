@@ -1,6 +1,9 @@
 import React from 'react'
 import Cookies from 'universal-cookie'
-import { loginInvestor, closeModal } from '../../../../store/modules/loginInvestor'
+import {
+  loginInvestor,
+  closeModal,
+} from '../../../../store/modules/loginInvestor'
 import { connect } from 'react-redux'
 import {
   LoginInvestorParams,
@@ -59,7 +62,10 @@ class Login extends React.Component<Props, IStateProps> {
   handleSubmit = e => {
     e.preventDefault()
     console.log(this.state)
-    this.props.loginInvestor({email: this.state.email, password: this.state.password})
+    this.props.loginInvestor({
+      email: this.state.email,
+      password: this.state.password,
+    })
     this.setState(
       (): IStateProps => {
         return {
@@ -100,7 +106,12 @@ class Login extends React.Component<Props, IStateProps> {
               {this.props.showError && (
                 <div style={{ color: 'red' }}>
                   Неверный Логин или пароль{' '}
-                  <span onClick={this.props.closeModal} style={{ fontSize: 30, cursor: 'pointer' }}>X</span>
+                  <span
+                    onClick={this.props.closeModal}
+                    style={{ fontSize: 30, cursor: 'pointer' }}
+                  >
+                    X
+                  </span>
                 </div>
               )}
               <a className="forgotLink" href="/">
@@ -126,7 +137,7 @@ const mapStateToProps = (state: IStore): LoginInvestor => {
 const mapDispatchToProps = (dispatch): IDispatchProps => {
   return {
     loginInvestor: params => dispatch(loginInvestor.action(params)),
-    closeModal: (close) => dispatch(closeModal(close))
+    closeModal: close => dispatch(closeModal(close)),
   }
 }
 

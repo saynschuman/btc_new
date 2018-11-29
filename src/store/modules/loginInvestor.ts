@@ -45,6 +45,7 @@ export default reducerWithInitialState(INITIAL_STATE)
   }))
   .case(loginInvestor.async.done, (state, payload) => {
     if (payload.result) {
+      console.log(payload.result)
       return {
         ...state,
         isLoading: false,
