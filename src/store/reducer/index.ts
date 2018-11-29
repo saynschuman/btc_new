@@ -1,6 +1,7 @@
 import { combineReducers } from "redux"
-import {reducer} from "../modules/reducer"
+import IStore from '../storeTypes'
+import loginInvestor from '../modules/loginInvestor'
 
-export default combineReducers({
-    reducer,
+export default combineReducers<IStore>({
+    loginInvestor
 })
