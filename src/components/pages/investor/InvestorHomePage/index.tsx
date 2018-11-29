@@ -12,7 +12,7 @@ class HomePage extends React.Component<OwnProps> {
     public render(): JSX.Element {
         return (
             <div>
-                Investor Homepage
+                Investor Homepage new
             </div>
         )
     }
