@@ -1,0 +1,32 @@
+.save-applies {
+  width: 319px;
+  margin-top: 14px;
+}
+
+.application-mobile-settings {
+  padding-bottom: 1px;
+}
+
+.settings-table th {
+  vertical-align: top;
+}
+
+@media screen and (max-width: 1700px) {
+  // .applications-table {
+  //   font-size: .8vw
+  // }
+  .applications-table.settings-table th {
+    padding: 7px;
+  }
+  .applications-table.settings-table td {
+    padding: 7px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+.save-applies {
+  width: 88%;
+  margin-top: 24px;
+  font-size: 16px;
+}
+}

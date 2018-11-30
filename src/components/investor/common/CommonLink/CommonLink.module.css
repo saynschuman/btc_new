@@ -1,0 +1,30 @@
+.link {
+    font-size: 23px;
+    color: #0048c5;
+    cursor: pointer;
+    transition: .3s;
+    opacity: .9;
+    padding-left: 46px;
+}
+
+.link:hover {
+    opacity: 1;
+    transition: .3s;
+}
+
+.link::after {
+    content: '';
+    margin-left: 10px;
+    height: 21px;
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url('./img/link.png') 
+}
+
+
+@media screen and (max-width: 1250px) {
+    .link {
+        padding-left: 15px;
+    }
+   }
