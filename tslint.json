@@ -1,0 +1,67 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "interface-name": false,
+    "forin": false,
+    "no-duplicate-imports": false,
+    "no-object-literal-type-assertion": false,
+    "no-shadowed-variable": false,
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "typedef": [
+      false,
+      "call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration"
+    ],
+    "no-submodule-imports": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "member-access": [
+      true, "check-accessor", "check-constructor"
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore",
+      "allow-trailing-underscore"
+    ],
+    "switch-default": true
+  },
+  "jsRules": {},
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": [
+      "node_modules",
+      "**/*.test.*",
+      "src/serviceWorker.*"
+    ]
+  }
+}

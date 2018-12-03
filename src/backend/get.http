@@ -1,2 +1,0 @@
-GET https://atc-bl.nadzor.online/bl198765/investor/moneys/balance HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZjI2ZWYyN2EwMzUxNmRmMmFiMGE5NyIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImludmVzdG9yIiwiaWF0IjoxNTQzMjg2MDU1LCJleHAiOjE1NDMyODk2NTV9.5wjes0JPWM0BHEATai-EfhsgSTl5oJpWgE79xTmtV4g

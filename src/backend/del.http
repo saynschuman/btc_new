@@ -1,3 +1,0 @@
-DELETE https://atc-bl.nadzor.online/bl198765/admin/news/5be3f14ccbaee260df87d1f6 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjYzNTQ5LCJleHAiOjE1NDE2NjcxNDl9.KWF1r__b0o5oNKnyxhfFgCZqqoz8Gay2JwOqZBGG4uY 
-Content-Type: application/json
