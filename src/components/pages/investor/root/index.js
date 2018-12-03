@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from "react"
+import checkToken from "../../../../helpers/checkToken"
 
-const Index = props => {
+class Index extends Component {
+  componentDidMount() {
+    checkToken()
+  }
+
+  render() {
     return (
-        <div>
-            Investor pages:
-            {props.children}
-        </div>
-    );
-};
+      <div>
+        Investor pages:
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
-export default Index;
+export default Index

@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react"
+import { investorLogin } from "../../../../helpers/login"
 
 const Index = () => {
-    return (
-        <div>
-            login
-        </div>
-    );
-};
+  return <div onClick={() => investorLogin()}>login</div>
+}
 
-export default Index;
+export default Index
