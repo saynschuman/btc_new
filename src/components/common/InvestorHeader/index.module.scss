@@ -27,12 +27,13 @@
   margin-top: 16px;
 }
 
-.left, right {
+.left,
+right {
   flex: 1;
 }
 
 .menu {
-  flex: 0 58%;
+  flex: 0 47%;
 }
 
 .nav {
@@ -146,6 +147,12 @@
         text-decoration: none;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .nav li a {
+    padding: 0 25px !important;
   }
 }
 
