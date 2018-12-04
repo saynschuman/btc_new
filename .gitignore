@@ -9,6 +9,7 @@
 .idea/*
 .idea*
 yarn.lock
+tasks.txt
 
 # testing
 /coverage
