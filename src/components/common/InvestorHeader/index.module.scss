@@ -37,9 +37,8 @@
 
 .nav {
   ul {
-    padding: 0;
     margin: 0;
-    padding-top: 40px;
+    padding: 40px 0 0;
   }
   li {
     list-style-type: none;
@@ -71,21 +70,43 @@
 
 .right {
   ul {
-    padding: 31px 0;
     margin: 0;
     li {
       display: inline-block;
-      margin-left: 20px;
+      margin-left: 0;
+      padding: 45px 31px 45px 21px;
+      vertical-align: top;
+      &.active {
+        background-color: #05073f;
+      }
+      &:last-child {
+        padding: 32px 0;
+      }
       &.lang {
+        position: relative;
+        .toggleLang {
+          position: absolute;
+          cursor: pointer;
+          left: 0;
+          top: 108px;
+          .chooseLang {
+            padding: 12px 26px;
+            background-color: #05073f;
+            &:hover {
+              background-color: #000060;
+            }
+          }
+        }
         span {
           position: relative;
+          cursor: pointer;
           &::after {
             content: "";
-            border: 4px solid transparent;
-            border-top: 4px solid #3070fd;
+            border: 6px solid transparent;
+            border-top: 12px solid #3070fd;
             position: absolute;
-            margin-top: 7px;
-            margin-left: 7px;
+            margin-top: 3px;
+            margin-left: 8px;
           }
         }
       }
