@@ -1,0 +1,15 @@
+@font-face {
+  font-family: gothamProReg;
+  src: url("./fonts/GothaProReg.otf");
+}
+
+@font-face {
+  font-family: gothamProLig;
+  src: url("./fonts/GothaProLig.otf");
+}
+
+body {
+  font-family: gothamProReg, serif;
+  background-color: #0a0433;
+  color: #fff
+}

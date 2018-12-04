@@ -5,6 +5,7 @@ import Home from "./components/pages/investor/root/home"
 import Buy from "./components/pages/investor/root/buy"
 import Setting from "./components/pages/investor/root/settings"
 import Investor from "./components/pages/investor/root"
+import './App.scss'
 
 class App extends Component {
   render() {

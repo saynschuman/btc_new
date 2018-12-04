@@ -4,6 +4,7 @@ import { investorLogin } from "../../helpers/login"
 const LOGIN_INVETSOR_REQUEST = "LOGIN_INVETSOR_REQUEST"
 const LOGIN_INVETSOR_SUCCESS = "LOGIN_INVETSOR_SUCCESS"
 const LOGIN_INVETSOR_ERROR = "LOGIN_INVETSOR_ERROR"
+const HIDE_POPUP = "HIDE_POPUP"
 
 const initialState = {
   isLoading: false,
@@ -26,6 +27,8 @@ export default (state = initialState, action) => {
         logged: false,
         showError: true
       }
+    case HIDE_POPUP:
+      return { ...state, showError: false }
     default:
       return state
   }
@@ -40,14 +43,20 @@ export const loginInvestor = data => dispatch => {
   })
   promise.then(response => {
     if (response.jwt) {
-        investorLogin(response.jwt)
-        dispatch({
-            type: LOGIN_INVETSOR_SUCCESS
-        })
+      investorLogin(response.jwt)
+      dispatch({
+        type: LOGIN_INVETSOR_SUCCESS
+      })
     } else {
-        dispatch({
-            type: LOGIN_INVETSOR_ERROR
-        })
+      dispatch({
+        type: LOGIN_INVETSOR_ERROR
+      })
     }
   })
+}
+
+export const hidePopup = () => {
+  return {
+    type: HIDE_POPUP
+  }
 }
