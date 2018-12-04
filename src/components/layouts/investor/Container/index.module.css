@@ -1,0 +1,14 @@
+.main {
+    float: right;
+    width: calc(70% - 15px);
+    margin-left: 15px;
+}
+
+     
+@media screen and (max-width: 1250px) {
+    .main {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+}

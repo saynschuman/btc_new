@@ -13,7 +13,7 @@ class App extends Component {
       <Router primary={false}>
         <Login default />
         <Investor path={"/investor"}>
-          <Home path={"home"} />
+          <Home default />
           <Buy path={"buy"} />
           <Setting path={"settings"} />
         </Investor>
