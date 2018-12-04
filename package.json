@@ -8,7 +8,6 @@
     "moment": "^2.22.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
-    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
     "react-file-reader": "^1.1.4",
     "react-perfect-scrollbar": "^1.4.2",
@@ -18,7 +17,8 @@
     "redux-devtools-extension": "^2.13.7",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
-    "universal-cookie": "^3.0.7"
+    "universal-cookie": "^3.0.7",
+    "victory": "^31.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
