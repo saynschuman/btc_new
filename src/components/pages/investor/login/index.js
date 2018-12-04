@@ -1,16 +1,14 @@
 import React, { Component } from "react"
-// import { investorLogin } from "../../../../helpers/login"
 import { connect } from "react-redux"
 import { reduxForm, formValueSelector, Field } from "redux-form"
-import checkValues from '../../../../helpers/checkValues'
+import { loginInvestor } from "../../../../store/modules/loginInvestor"
 
 class Index extends Component {
-  getProps = () => {
-    const values = {
-      email: this.props.email,
-      password: this.props.password
-    }
-    console.log(checkValues(values, null))
+  login = () => {
+    this.props.loginInvestor({
+        email: this.props.email,
+        password: this.props.password
+    })
   }
 
   render() {
@@ -22,7 +20,7 @@ class Index extends Component {
         <div>
           <Field name={"password"} component={"input"} />
           <div>
-            <button onClick={this.getProps}>get props</button>
+            <button onClick={this.login}>get props</button>
           </div>
         </div>
       </div>
@@ -40,6 +38,17 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    loginInvestor: () => dispatch(loginInvestor())
+  }
+}
+
 export default reduxForm({
   form: "login"
-})(connect(mapStateToProps)(Index))
+})(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Index)
+)
