@@ -56,7 +56,7 @@ class Header extends Component {
                 </li>
                 <li>
                   <Link getProps={isActive} {...this.props} to="buy">
-                    Покупка-продажа
+                    Покупка/продажа
                   </Link>
                 </li>
                 <li>
