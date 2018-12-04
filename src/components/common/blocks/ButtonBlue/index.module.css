@@ -1,0 +1,60 @@
+.button {
+    border: none;
+    background-color: transparent;
+    background: linear-gradient(to left, #015ca9 0%, #005aec 100%);
+    background: -moz-linear-gradient(to left, #015ca9 0%, #005aec 100%);
+    background: -webkit-linear-gradient(to left, #015ca9 0%, #005aec 100%);
+    border-radius: 30px;
+    color: #fff;
+    padding: 17px 30px;
+    font-size: 20px;
+    display: block;
+    margin-top: 20px;
+    margin-left: 46px;
+    text-align: center;
+    max-width: 120px;
+    cursor: pointer;
+    position: relative;
+}
+
+.info {
+    width: 28px;
+    height: 27px;
+    background-image: url('./img/info.png');
+    background-size: 100%;
+    cursor: pointer;
+    position: absolute;
+    right: -40px;
+    top: 13px;
+}
+
+.info:hover::after {
+    transition: .3s;
+    opacity: 1
+}
+
+.info::after {
+    content: attr(data-info);
+    height: auto;
+    padding: 13px;
+    width: 185px;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.4;
+    display: block;
+    text-align: left;
+    margin-top: -90px;
+    background-color: rgba(137, 0, 255, 0.3);
+    border-radius: 4px;
+    transition: .3s;
+    opacity: 0;
+}
+
+@media screen and (max-width: 1250px) {
+ .info {
+     display: none;
+ }
+ .button {
+     margin: 20px auto 0;
+ }
+}

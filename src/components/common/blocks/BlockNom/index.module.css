@@ -1,0 +1,36 @@
+.block {
+    background-color: #000060;
+    color: #fff;
+    margin-bottom: 42px;
+    border-radius: 2px;
+    margin-top: -42px;
+    padding-bottom: 30px;
+}
+
+.img {
+    position: absolute;
+    right: 15px;
+    top: 7px;
+}
+
+.title {
+    background-color: #000056;
+    padding: 20px 15px 20px 45px;
+}
+
+.header {
+    position: relative;
+    padding: 0;
+    border-bottom: 1px solid #003284;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1250px) {
+    .header {
+        padding: 15px;
+    }
+    .img {
+        right: 5px;
+        top: 7px;
+    }
+}
