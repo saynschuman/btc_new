@@ -64,6 +64,9 @@
       box-shadow: 2px 2px 10px rgba(55, 97, 235, 0.9);
       cursor: pointer;
     }
+    input:disabled {
+      opacity: .5;
+    }
     .forgotLink {
       font-size: 14px;
       color: #6a9aee;

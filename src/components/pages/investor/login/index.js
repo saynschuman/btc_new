@@ -34,6 +34,8 @@ class Index extends Component {
   }
 
   render() {
+    const isValid =
+      this.props.email && this.props.password
     return (
       <div>
         <div className={css.loginHeader} />
@@ -45,7 +47,12 @@ class Index extends Component {
             <form className={css.container}>
               <Field name={"email"} component={"input"} type={"text"} />
               <Field name={"password"} component={"input"} type={"password"} />
-              <input onClick={this.login} type="submit" value={"Вход"} />
+              <input
+                onClick={this.login}
+                type="submit"
+                disabled={!isValid}
+                value={"Вход"}
+              />
               {this.props.isLoading && !this.props.isLoaded && (
                 <div className={css.loader} />
               )}
