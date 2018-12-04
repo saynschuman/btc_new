@@ -37,21 +37,24 @@ class Index extends React.Component {
     this.chooseLang()
   }
   render() {
+    const isActive = ({ isCurrent }) => {
+      return isCurrent ? { className: [css.isActive] } : null
+    }
     return (
       <div className={css.mobileMenu}>
         <ul className={css.menu}>
           <li>
-            <Link onClick={this.props.toggleMobileMenu} to="">
+            <Link onClick={this.props.toggleMobileMenu} getProps={isActive} to="">
               Главная
             </Link>
           </li>
           <li>
-            <Link onClick={this.props.toggleMobileMenu} to="buy">
+            <Link onClick={this.props.toggleMobileMenu} getProps={isActive} to="buy">
               Покупка/Продажа
             </Link>
           </li>
           <li>
-            <Link onClick={this.props.toggleMobileMenu} to="settings">
+            <Link onClick={this.props.toggleMobileMenu} getProps={isActive} to="settings">
               Настройки
             </Link>
           </li>
