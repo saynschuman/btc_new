@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import checkToken from "../../../../helpers/checkToken"
+import InvestorHeader from '../../../common/InvestorHeader'
 
 class Index extends Component {
   componentDidMount() {
@@ -9,7 +10,7 @@ class Index extends Component {
   render() {
     return (
       <div>
-        Investor pages:
+        <InvestorHeader />
         {this.props.children}
       </div>
     )
