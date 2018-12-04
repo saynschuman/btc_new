@@ -20,15 +20,14 @@
 }
 
 .logo {
-  height: 70px;
-  width: 195px;
+  height: 48px;
+  width: 126px;
   background-image: url("./img/logo.png");
   background-size: 100%;
   margin-top: 16px;
 }
 
-.left,
-right {
+.left {
   flex: 1;
 }
 
@@ -150,6 +149,51 @@ right {
   }
 }
 
+.mobileMenuButton {
+  display: none;
+  width: 33px;
+  height: 3px;
+  background-color: #abadb9;
+  position: absolute;
+  right: 15px;
+  top: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+  &.openedMenu {
+    background-color: transparent !important;
+    &::before {
+      transform: rotate(45deg);
+      top: 0;
+      transition: 0.3s;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      top: 0;
+      transition: 0.3s;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -8.5px;
+    height: 3px;
+    background-color: #abadb9;
+    left: 0;
+    transition: 0.3s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -7.5px;
+    height: 3px;
+    background-color: #abadb9;
+    left: 0;
+    transition: 0.3s;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   .nav li a {
     padding: 0 25px !important;
@@ -157,8 +201,14 @@ right {
 }
 
 @media screen and (max-width: 1270px) {
+  .mobileMenuButton {
+    display: block;
+  }
   .menu,
   .right {
     display: none;
+  }
+  .headerWrapper {
+    height: 87px;
   }
 }

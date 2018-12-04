@@ -12,6 +12,8 @@ import BlockNom from "../../../common/investor/blocks/BlockNom"
 import CommonLink from "../../../common/investor/blocks/CommonLink"
 import ButtonBlue from "../../../common/investor/blocks/ButtonBlue"
 import css from "./index.module.scss"
+import MobileMenu from "../../../common/investor/MobileMenu"
+import { connect } from "react-redux"
 
 class Index extends Component {
   componentDidMount() {
@@ -45,10 +47,17 @@ class Index extends Component {
             </Block>
           </Aside>
           <Container>{this.props.children}</Container>
+          {this.props.menuIsOpen && <MobileMenu />}
         </MainContainer>
       </div>
     )
   }
 }
 
-export default Index
+const MSTP = state => {
+  return {
+    menuIsOpen: state.toggleMenu.mobileMenuIsOpen
+  }
+}
+
+export default connect(MSTP)(Index)

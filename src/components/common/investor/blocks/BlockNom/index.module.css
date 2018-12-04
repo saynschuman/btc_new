@@ -27,10 +27,13 @@
 
 @media screen and (max-width: 1250px) {
     .header {
-        padding: 15px;
+        padding: 0;
     }
     .img {
-        right: 5px;
-        top: 7px;
+        right: 3px;
+        top: 12px;
+    }
+    .title {
+        padding-left: 15px;
     }
 }

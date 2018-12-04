@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import css from "./index.module.scss"
 import { Link } from "@reach/router"
-import Cookies from "universal-cookie"
 import classNames from "classnames"
+import logOut from "../../../../helpers/logOut"
+import { connect } from "react-redux"
+import { toggleMobileMenu } from "../../../../store/modules/toggleMenu"
 
 const languages = [
   {
@@ -21,9 +23,7 @@ class Header extends Component {
     langIsOpen: false
   }
   exit = () => {
-    const cookies = new Cookies()
-    cookies.remove("token")
-    window.location.replace("/")
+    logOut()
   }
   chooseLang = () => {
     this.setState({
@@ -32,7 +32,7 @@ class Header extends Component {
   }
   chooseThisLang = lang => {
     this.setState({
-        language: lang
+      language: lang
     })
     this.chooseLang()
   }
@@ -50,17 +50,17 @@ class Header extends Component {
             <nav className={css.nav}>
               <ul>
                 <li>
-                  <Link getProps={isActive} {...this.props} to="">
+                  <Link getProps={isActive} to="">
                     Главная
                   </Link>
                 </li>
                 <li>
-                  <Link getProps={isActive} {...this.props} to="buy">
+                  <Link getProps={isActive} to="buy">
                     Покупка/продажа
                   </Link>
                 </li>
                 <li>
-                  <Link getProps={isActive} {...this.props} to="settings">
+                  <Link getProps={isActive} to="settings">
                     Настройки
                   </Link>
                 </li>
@@ -99,11 +99,23 @@ class Header extends Component {
               </li>
             </ul>
           </div>
-          <div className={css.mobileMenuButton} />
+          <div
+            onClick={this.props.toggleMobileMenu}
+            className={classNames([css.mobileMenuButton], {
+              [css.openedMenu]: this.props.menuIsOpen
+            })}
+          />
         </div>
       </div>
     )
   }
 }
 
-export default Header
+export default connect(
+  state => {
+    return {
+      menuIsOpen: state.toggleMenu.mobileMenuIsOpen
+    }
+  },
+  { toggleMobileMenu }
+)(Header)

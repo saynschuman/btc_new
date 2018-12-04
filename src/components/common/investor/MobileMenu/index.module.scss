@@ -1,0 +1,99 @@
+.mobileMenu {
+  position: absolute;
+  top: 89px;
+  left: 0;
+  background-color: #09093c;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 999;
+}
+
+.isActive {
+  color: #3070fd !important;
+  font-weight: 700 !important;
+}
+
+.menu {
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.menu li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  list-style-type: none;
+  width: 100%;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.hr {
+  width: 80%;
+  height: 1px;
+  background-color: #2e1871;
+  border: none;
+  margin: 40px auto;
+}
+
+.langtoggle {
+  text-transform: uppercase;
+}
+
+.lang {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 19px;
+  position: relative;
+  .toggleLang {
+    width: calc(100% - 100px);
+    display: block;
+    margin: 20px auto -20px;
+    .chooseLang {
+      padding: 12px;
+      background-color: transparent;
+      &.active {
+        background-color: #000060;
+      }
+      &:active {
+        background-color: #000060;
+      }
+    }
+  }
+}
+
+.exitBtn {
+  display: block;
+  width: 115px;
+  color: #fff;
+  border: 1px solid #3070fd;
+  border-radius: 30px;
+  text-align: left;
+  padding: 13px 13px 13px 30px;
+  margin: 0 auto;
+  font-size: 21px;
+  position: relative;
+}
+
+.exitBtn::after {
+  content: "";
+  height: 21px;
+  width: 21px;
+  background-image: url("./img/logOut.png");
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  right: 22px;
+  top: 15px;
+  cursor: pointer;
+}
