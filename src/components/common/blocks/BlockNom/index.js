@@ -6,7 +6,7 @@ export default props => {
     <div className={css.block}>
       <div className={css.header}>
         <div className={css.title}>{props.title}</div>
-        {props.icon && <img className={css.img} src={props.icon} />}
+        {props.icon && <img className={css.img} src={props.icon}  alt={''}/>}
       </div>
       <div className={css.body}>{props.children}</div>
     </div>
