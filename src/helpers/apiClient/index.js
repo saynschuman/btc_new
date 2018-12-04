@@ -1,15 +1,11 @@
 export const post = (url, data) => {
-    console.log(data);
-    fetch(url, {
+    return fetch(url, {
     method: "post",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-        "email": "invest",
-        "password": "123123"
-    })
+    body: JSON.stringify(data)
   })
     .then(res => res.json())
-    .catch(error => console.log(error))
+    .catch(error => error)
 }

@@ -1,4 +1,5 @@
 import { post } from "../../helpers/apiClient"
+import { investorLogin } from "../../helpers/login"
 
 const LOGIN_INVETSOR_REQUEST = "LOGIN_INVETSOR_REQUEST"
 const LOGIN_INVETSOR_SUCCESS = "LOGIN_INVETSOR_SUCCESS"
@@ -35,15 +36,18 @@ export const loginInvestor = data => dispatch => {
     type: LOGIN_INVETSOR_REQUEST
   })
   const promise = new Promise(resolve => {
-    // resolve(post("https://atc-bl.nadzor.online/bl198765/investor/login", data))
-      resolve(Math.random())
+    resolve(post("https://atc-bl.nadzor.online/bl198765/investor/login", data))
   })
-
-  promise.then(result => {
-    if (result > 0.5) {
-        console.log('more')
+  promise.then(response => {
+    if (response.jwt) {
+        investorLogin(response.jwt)
+        dispatch({
+            type: LOGIN_INVETSOR_SUCCESS
+        })
     } else {
-        console.log('less')
+        dispatch({
+            type: LOGIN_INVETSOR_ERROR
+        })
     }
   })
 }

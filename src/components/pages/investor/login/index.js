@@ -5,10 +5,12 @@ import { loginInvestor } from "../../../../store/modules/loginInvestor"
 
 class Index extends Component {
   login = () => {
-    this.props.loginInvestor({
+    const data = {
         email: this.props.email,
         password: this.props.password
-    })
+    }
+    console.log(data)
+    this.props.loginInvestor(data)
   }
 
   render() {
@@ -40,7 +42,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginInvestor: () => dispatch(loginInvestor())
+    loginInvestor: (data) => dispatch(loginInvestor(data))
   }
 }
 

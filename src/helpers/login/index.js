@@ -1,8 +1,7 @@
 import Cookies from "universal-cookie"
 
-export const investorLogin = () => {
-  // statement fixed
+export const investorLogin = token => {
   const cookies = new Cookies()
-  cookies.set("token", "111", { expires: new Date(Date.now() + 1000 * 3) })
+  cookies.set("token", token, { expires: new Date(Date.now() + 1000 * 5) })
   window.location.replace("/investor")
 }
