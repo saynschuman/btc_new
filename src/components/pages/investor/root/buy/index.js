@@ -1,15 +1,21 @@
 import React from "react"
 import css from "./index.module.scss"
 import classNames from "classnames"
-import CustomTable from "../../../../common/general/CustomTable"
-import { TableHeader, TableBody } from "../../../../common/general/CustomTable"
+import {
+  TableHeader,
+  TableBody,
+  default as CustomTable,
+  ActiveInvestTableBody
+} from "../../../../common/general/CustomTable"
+import PerfectScrollbar from "react-perfect-scrollbar"
+import "react-perfect-scrollbar/dist/css/styles.css"
 
 const activeHeaders = [
   "Дата входа",
   "Срок",
   "Сумма TH/s",
-  "Стоимость до конца срока (?)",
-  "Коэфициент начисления",
+  `Стоимость до конца <br /> срока (?)`,
+  `Коэфициент <br /> начисления`,
   "Выплачено",
   "Продажа (?)"
 ]
@@ -17,11 +23,88 @@ const activeHeaders = [
 const historyHeaders = [
   "Дата",
   "Срок",
-  "Коэфициент начисления",
+  `Коэфициент <br /> начисления`,
   "Операция",
   "Сумма BTC",
   "Сумма TH/s",
   "Статус (?)"
+]
+
+const data = [
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  },
+  {
+    datePurchased: "01.01.2018",
+    durationMonth: "1 месяц",
+    hashRatePrice: "0.05453",
+    originalHashRate: "01.01.2018 (53 дня)",
+    coefficient: 0.5,
+    sold: "0.05453"
+  }
+]
+
+const data1 = [
+  "01.01.2018",
+  "1 месяц",
+  "0.6",
+  "Продажа",
+  "0.05453",
+  "0.05453",
+  "Подтверждено"
 ]
 
 class Settings extends React.Component {
@@ -42,7 +125,8 @@ class Settings extends React.Component {
           <div
             onClick={this.handleTabs}
             className={classNames({
-              "not-active": !this.state.investors
+              [css.notActive]: !this.state.investors,
+              [css.tab]: true
             })}
           >
             Активные инвестиции
@@ -50,18 +134,34 @@ class Settings extends React.Component {
           <div
             onClick={this.handleTabs}
             className={classNames({
-              "not-active": !this.state.investitions
+              [css.notActive]: !this.state.investitions,
+              [css.tab]: true
             })}
           >
             История инвестиций
           </div>
         </div>
-        <table className={css.tableHeader}>
-          <tbody>
-            {this.state.investors && <TableHeader items={activeHeaders} />}
-            {this.state.investitions && <TableHeader items={historyHeaders} />}
-          </tbody>
-        </table>
+
+        <PerfectScrollbar>
+          <div className={css.tableWrapper}>
+            <table className={css.customTable}>
+              <tbody>
+                {this.state.investors && (
+                  <React.Fragment>
+                    <TableHeader items={activeHeaders} />
+                    <ActiveInvestTableBody data={data} buttonText={"Продать"} />
+                  </React.Fragment>
+                )}
+                {this.state.investitions && (
+                  <React.Fragment>
+                    <TableHeader items={historyHeaders} />
+                    <TableBody data={data1} />
+                  </React.Fragment>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </PerfectScrollbar>
       </div>
     )
   }

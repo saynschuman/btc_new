@@ -1,10 +1,66 @@
 .tabs {
   display: flex;
   justify-content: space-around;
+  .tab {
+    padding: 20px;
+    width: 50%;
+    cursor: pointer;
+    text-align: center;
+    background-color: #000057;
+    &.notActive {
+      background-color: #000046;
+    }
+  }
 }
 
 .tableHeader {
   text-align: left;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 100%;
+}
+
+.customTable {
+  border: 1px solid #14146b;
+  border-collapse: collapse;
+  width: calc(100% - 40px);
+  font-size: 18px;
+  line-height: 1.3;
+  background-color: #00005e;
+  th {
+    border: 1px solid #14146b;
+    padding: 17px;
+    text-align: left;
+    font-weight: 300;
+    white-space: nowrap;
+    &:first-child {
+      padding-left: 40px;
+      min-width: auto;
+    }
+  }
+  td {
+    border: 1px solid #14146b;
+    padding: 17px;
+    font-weight: 300;
+    white-space: nowrap;
+    &:first-child {
+      padding-right: 70px;
+      padding-left: 40px;
+    }
+  }
+}
+
+.tableWrapper {
+  height: 400px;
+  position: relative;
+  .scrollInner {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 26px;
+      background-color: #0093dd;
+      height: 100%;
+    }
+  }
 }

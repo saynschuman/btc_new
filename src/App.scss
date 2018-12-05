@@ -1,3 +1,15 @@
+@mixin linear-gradient($from, $to) {
+  background: linear-gradient(to left, $from 0%, $to 100%);
+  background: -moz-linear-gradient(to left, $from 0%, $to 100%);
+  background: -webkit-linear-gradient(to left, $from 0%, $to 100%);
+}
+
+@mixin bottom-gradient($from, $to) {
+  background: linear-gradient(to bottom, $from 0%, $to 100%);
+  background: -moz-linear-gradient(to bottom, $from 0%, $to 100%);
+  background: -webkit-linear-gradient(to bottom, $from 0%, $to 100%);
+}
+
 @font-face {
   font-family: gothamProReg;
   src: url("./fonts/GothaProReg.otf");
@@ -33,4 +45,68 @@ body {
 
 .ReactTable .rt-thead .rt-resizable-header-content {
   text-align: left;
+}
+
+
+.ps--active-x > .ps__rail-x {
+  background-color: #020940;
+  width: 7px;
+  opacity: 1 !important;
+  &:hover {
+    width: 7px;
+    background-color: #020940;
+    opacity: 1 !important;
+  }
+}
+
+.ps--active-y > .ps__rail-y {
+  background-color: #020940;
+  width: 7px;
+  //margin-right: 14px;
+  opacity: 1 !important;
+  &:hover {
+    width: 7px;
+    background-color: #020940;
+    opacity: 1 !important;
+  }
+}
+
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+  width: 7px;
+  cursor: pointer;
+}
+
+.ps__thumb-y {
+  width: 7px;
+  right: 0px;
+  &:hover {
+    width: 7px;
+    @include bottom-gradient(#11c1ed, #005aff);
+  }
+  @include bottom-gradient(#11c1ed, #005aff);
+}
+
+.ps__thumb-x {
+  width: 7px;
+  right: 0px;
+  &:hover {
+    width: 7px;
+    @include bottom-gradient(#11c1ed, #005aff);
+  }
+  @include bottom-gradient(#11c1ed, #005aff);
+}
+
+.ps__rail-x:hover > .ps__thumb-x, .ps__rail-x:focus > .ps__thumb-x, .ps__rail-x.ps--clicking .ps__thumb-x {
+  width: 7px;
+  cursor: pointer;
+}
+
+.ps__thumb-x {
+  width: 7px;
+  right: 0px;
+  &:hover {
+    width: 7px;
+    @include bottom-gradient(#11c1ed, #005aff);
+  }
+  @include bottom-gradient(#11c1ed, #005aff);
 }
