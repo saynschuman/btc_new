@@ -1,9 +1,33 @@
 import React from "react"
-import ReactTable from "react-table"
-import "react-table/react-table.css"
+import css from "./index.module.scss"
 
-const Index = props => {
-  return <ReactTable data={props.data} columns={props.columns} />
+export const TableHeader = props => {
+  return (
+    <tr>
+      {props.items.map((item, index) => (
+        <th key={index}>{item}</th>
+      ))}
+    </tr>
+  )
 }
 
-export default Index
+export const TableBody = props => {
+  return (
+    <tr>
+      {props.data.map((item, index) => (
+        <td key={index}>{item}</td>
+      ))}
+    </tr>
+  )
+}
+
+export default props => {
+  return (
+    <table className={css.tableHeader}>
+      <tbody>
+        <TableHeader>{props.items}</TableHeader>
+        <TableBody>{props.data}</TableBody>
+      </tbody>
+    </table>
+  )
+}

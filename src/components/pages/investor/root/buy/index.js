@@ -1,6 +1,28 @@
 import React from "react"
 import css from "./index.module.scss"
 import classNames from "classnames"
+import CustomTable from "../../../../common/general/CustomTable"
+import { TableHeader, TableBody } from "../../../../common/general/CustomTable"
+
+const activeHeaders = [
+  "Дата входа",
+  "Срок",
+  "Сумма TH/s",
+  "Стоимость до конца срока (?)",
+  "Коэфициент начисления",
+  "Выплачено",
+  "Продажа (?)"
+]
+
+const historyHeaders = [
+  "Дата",
+  "Срок",
+  "Коэфициент начисления",
+  "Операция",
+  "Сумма BTC",
+  "Сумма TH/s",
+  "Статус (?)"
+]
 
 class Settings extends React.Component {
   state = {
@@ -34,32 +56,12 @@ class Settings extends React.Component {
             История инвестиций
           </div>
         </div>
-        {this.state.investors && (
-          <table className={css.tableHeader}>
-            <tbody>
-              <th>Дата входа</th>
-              <th>Срок</th>
-              <th>Сумма TH/s</th>
-              <th>Стоимость до конца срока (?)</th>
-              <th>Коэфициент начисления</th>
-              <th>Выплачено</th>
-              <th>Продажа (?)</th>
-            </tbody>
-          </table>
-        )}
-        {this.state.investitions && (
-          <table className={css.tableHeader}>
-            <tbody>
-              <th>Дата</th>
-              <th>Срок</th>
-              <th>Коэфициент начисления</th>
-              <th>Операция</th>
-              <th>Сумма BTC</th>
-              <th>Сумма TH/s</th>
-              <th>Статус (?)</th>
-            </tbody>
-          </table>
-        )}
+        <table className={css.tableHeader}>
+          <tbody>
+            {this.state.investors && <TableHeader items={activeHeaders} />}
+            {this.state.investitions && <TableHeader items={historyHeaders} />}
+          </tbody>
+        </table>
       </div>
     )
   }
