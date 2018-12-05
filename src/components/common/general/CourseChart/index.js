@@ -1,5 +1,6 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
+import css from './index.module.scss'
 
 class Index extends React.Component {
   render() {
@@ -93,8 +94,8 @@ class Index extends React.Component {
       }
     }
     return (
-      <div>
-        <Line data={data} options={options} />
+      <div className={css.wrapper}>
+        <Line data={data} height={120} options={options} />
       </div>
     )
   }
