@@ -12,7 +12,6 @@ export const post = (url, data) => {
     .catch(error => error)
 }
 
-
 export const get = url => {
   const cookies = new Cookies()
   return fetch(url, {
@@ -24,4 +23,23 @@ export const get = url => {
   })
     .then(res => res.json())
     .catch(error => error)
+}
+
+export const put = (url, data) => {
+  const cookies = new Cookies()
+  return fetch(url, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${cookies.get('token')}`
+    },
+    body: JSON.stringify(data)
+  })
+    .then(res => {
+      if (res.status === 200) {
+        return true
+      } else {
+        return false
+      }
+    })
 }

@@ -1,0 +1,35 @@
+
+.wrongData {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #efefef;
+  color: red;
+  font-family: gothamProLig, serif;
+  font-size: 18px;
+  max-width: 317px;
+  padding: 37px 56px;
+  z-index: 99;
+}
+
+.closeWrong {
+  width: 16px;
+  height: 16px;
+  background-image: url("./img/close.png");
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-size: 100%;
+  cursor: pointer
+}
+
+@media screen and (max-width: 769px) {
+  .wrongData {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    min-width: 216px;
+    text-align: center;
+  }
+}

@@ -40,7 +40,7 @@ export default props => {
             <table className={css.customTable}>
               <tbody>
                 <TableHeader items={activeHeaders} />
-                <ActiveInvestTableBody data={mockData} buttonText={"Продать"} />
+                <ActiveInvestTableBody data={props.investments} buttonText={"Продать"} />
               </tbody>
             </table>
           )}
@@ -48,7 +48,7 @@ export default props => {
             <table className={css.customTable}>
               <tbody>
                 <TableHeader items={historyHeaders} />
-                <HistoryInvestTableBody data={mockData} />
+                <HistoryInvestTableBody data={[]} />
               </tbody>
             </table>
           )}
@@ -61,7 +61,7 @@ export default props => {
               <table className={css.customTable}>
                 <tbody>
                   <TableHeader items={purseHeaders} />
-                  <PurseTableBody data={mockData} />
+                  <PurseTableBody data={[]} />
                 </tbody>
               </table>
             </div>

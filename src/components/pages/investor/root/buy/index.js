@@ -3,8 +3,13 @@ import css from "./index.module.scss"
 import classNames from "classnames"
 import Desktop from "./components/desktop"
 import Mobile from "./components/mobile"
+import { connect } from "react-redux"
+import { getInvestments } from "../../../../../store/modules/reports"
 
 class Settings extends React.Component {
+  componentDidMount() {
+    this.props.getInvestments()
+  }
   state = {
     investors: true,
     investitions: false
@@ -41,14 +46,25 @@ class Settings extends React.Component {
         <Desktop
           investitions={this.state.investitions}
           investors={this.state.investors}
+          investments={this.props.investments}
         />
         <Mobile
           investitions={this.state.investitions}
           investors={this.state.investors}
+          investments={[]}
         />
       </div>
     )
   }
 }
 
-export default Settings
+const mapStateToProps = state => {
+  return {
+    investments: state.reports.investments
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { getInvestments }
+)(Settings)

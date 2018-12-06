@@ -36,7 +36,7 @@ export default props => {
         <div className={css.tableWrapper}>
           {props.investors && (
             <div>
-              {mockData.map((item, index) => (
+              {props.investments.map((item, index) => (
                 <ActiveInvestTableBody
                   key={index}
                   items={activeHeaders}
@@ -48,7 +48,7 @@ export default props => {
           )}
           {props.investitions && (
             <div>
-              {mockData.map((item, index) => (
+              {props.investments.map((item, index) => (
                 <ActiveInvestTableBody
                   key={index}
                   items={activeHeaders}
@@ -64,7 +64,7 @@ export default props => {
         <Block title={"История операций личного кошелька"}>
           <PerfectScrollbar>
             <div className={css.tableWrapper}>
-              {mockData.map((item, index) => (
+              {[].map((item, index) => (
                 <ActiveInvestTableBody
                   key={index}
                   items={activeHeaders}
