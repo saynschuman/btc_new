@@ -20,8 +20,8 @@
 }
 
 .logo {
-  height: 48px;
-  width: 126px;
+  height: 83px;
+  width: 204px;
   background-image: url("./img/logo.png");
   background-size: 100%;
   margin-top: 16px;
@@ -84,6 +84,7 @@
       }
       &.lang {
         position: relative;
+        z-index: 9;
         .toggleLang {
           position: absolute;
           cursor: pointer;
@@ -201,6 +202,13 @@
 }
 
 @media screen and (max-width: 1270px) {
+  .logo {
+    height: 48px;
+    width: 126px;
+    background-image: url("./img/logo.png");
+    background-size: 100%;
+    margin-top: 16px;
+  }
   .mobileMenuButton {
     display: block;
   }
