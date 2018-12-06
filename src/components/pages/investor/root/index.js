@@ -14,8 +14,9 @@ import ButtonBlue from "../../../common/investor/blocks/ButtonBlue"
 import css from "./index.module.scss"
 import MobileMenu from "../../../common/investor/MobileMenu"
 import { investorHomePageGetData } from "../../../../store/modules/investorHomePageGetData"
+import { getCourse } from "../../../../store/modules/getCourse"
 import { connect } from "react-redux"
-import Loader from '../../../common/general/Loader'
+import Loader from "../../../common/general/Loader"
 
 class Index extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class Index extends Component {
     !this.props.isLoaded &&
       !this.props.isLoading &&
       this.props.investorHomePageGetData()
+    !this.props.isLoaded && !this.props.isLoading && this.props.getCourse()
   }
 
   render() {
@@ -49,8 +51,8 @@ class Index extends Component {
                 <Block title={"Курс"} icon={course}>
                   <ul className={css.courses}>
                     <li>1 TH/s = 0.15 BTC</li>
-                    <li>1 BTC = 6 952,04$</li>
-                    <li>1 BTC = 399 574P</li>
+                    <li>1 BTC = {this.props.course.USD}$</li>
+                    <li>1 BTC = {this.props.course.RUB}P</li>
                   </ul>
                 </Block>
               </Aside>
@@ -73,11 +75,12 @@ const mapStateToProps = state => {
     nEarnings: state.investorHomePageGetData.nEarnings,
     address: state.investorHomePageGetData.address,
     confirmedBalance: state.investorHomePageGetData.confirmedBalance,
-    pendingBalance: state.investorHomePageGetData.pendingBalance
+    pendingBalance: state.investorHomePageGetData.pendingBalance,
+    course: state.getCourse.course
   }
 }
 
 export default connect(
   mapStateToProps,
-  { investorHomePageGetData }
+  { investorHomePageGetData, getCourse }
 )(Index)

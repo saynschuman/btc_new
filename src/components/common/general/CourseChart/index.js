@@ -1,6 +1,7 @@
 import React from "react"
 import { Line } from "react-chartjs-2"
-import css from './index.module.scss'
+import css from "./index.module.scss"
+import moment from "moment"
 
 class Index extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Index extends React.Component {
       responsive: true,
       tooltips: {
         bodyFontColor: "white",
-        backgroundColor: 'rgba(137, 0, 255, 0.3)',
+        backgroundColor: "rgba(137, 0, 255, 0.3)",
         xPadding: 10,
         yPadding: 7
       },
@@ -50,8 +51,10 @@ class Index extends React.Component {
               labelString: "Value"
             },
             ticks: {
-              suggestedMin: 5,
-              suggestedMax: 10
+              suggestedMin: this.props.courses.map(course => course.USD)[0],
+              suggestedMax: this.props.courses.map(course => course.USD)[
+                this.props.courses.map(course => course.USD).length - 1
+              ]
             }
           }
         ]
@@ -66,7 +69,9 @@ class Index extends React.Component {
       borderGradient.addColorStop(0, "rgba(208, 16, 255, 0.9)")
       borderGradient.addColorStop(1, "rgba(36, 156, 255, 0.9)")
       return {
-        labels: ["label1", "label2", "label3", "label4"],
+        labels: this.props.courses.map(course =>
+          moment(Date.parse(course.date)).format("MMM Do YY")
+        ),
         datasets: [
           {
             hidden: false,
@@ -88,7 +93,7 @@ class Index extends React.Component {
             pointHoverBorderWidth: 0,
             pointRadius: 7,
             pointHitRadius: 10,
-            data: [1, 7, 3, 2, 5, 6]
+            data: this.props.courses.map(course => course.USD)
           }
         ]
       }
