@@ -8,7 +8,7 @@ export const TableHeader = props => {
         function createMarkup() {
           return { __html: item }
         }
-        return <td key={index} dangerouslySetInnerHTML={createMarkup()} />
+        return <th key={index} dangerouslySetInnerHTML={createMarkup()} />
       })}
     </tr>
   )
@@ -21,25 +21,6 @@ export const TableBody = props => {
         <td key={index}>{item}</td>
       ))}
     </tr>
-  )
-}
-
-export const ActiveInvestTableBody = props => {
-  const { buttonText } = props
-  return (
-    <React.Fragment>
-      {props.data.map((item, index) => (
-        <tr key={index}>
-          <td>{item.datePurchased}</td>
-          <td>{item.durationMonth}</td>
-          <td>{item.hashRatePrice}</td>
-          <td>{item.originalHashRate}</td>
-          <td>{item.coefficient}</td>
-          <td>{item.sold}</td>
-          <td><button>{buttonText}</button></td>
-        </tr>
-      ))}
-    </React.Fragment>
   )
 }
 

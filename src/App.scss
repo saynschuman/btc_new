@@ -51,11 +51,9 @@ body {
 .ps--active-x > .ps__rail-x {
   background-color: #020940;
   width: 7px;
-  opacity: 1 !important;
   &:hover {
     width: 7px;
     background-color: #020940;
-    opacity: 1 !important;
   }
 }
 
@@ -68,6 +66,12 @@ body {
     width: 7px;
     background-color: #020940;
     opacity: 1 !important;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .ps--active-y > .ps__rail-y {
+    margin-right: 7px;
   }
 }
 

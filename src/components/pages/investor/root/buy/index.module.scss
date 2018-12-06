@@ -22,7 +22,7 @@
 .customTable {
   border: 1px solid #14146b;
   border-collapse: collapse;
-  width: calc(100% - 40px);
+  width: 100%;
   font-size: 18px;
   line-height: 1.3;
   background-color: #00005e;
@@ -32,6 +32,7 @@
     text-align: left;
     font-weight: 300;
     white-space: nowrap;
+    background-color: #00005e;
     &:first-child {
       padding-left: 40px;
       min-width: auto;
@@ -39,6 +40,7 @@
   }
   td {
     border: 1px solid #14146b;
+    background-color: #00005e;
     padding: 17px;
     font-weight: 300;
     white-space: nowrap;
@@ -51,16 +53,82 @@
 
 .tableWrapper {
   height: 400px;
-  position: relative;
-  .scrollInner {
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 26px;
-      background-color: #0093dd;
-      height: 100%;
+  background-color: #00015e;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+  background-color: #00015e;
+  margin-bottom: 70px;
+}
+
+.mobileButton {
+  width: 107px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #046ffb;
+  color: #a7a6c5;
+  border-radius: 30px;
+  font-size: 20px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.mobileWrapper {
+  width: calc(100% - 25px);
+  background-color: #070779;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+
+}
+
+.mobileTable {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+
+
+  td {
+    border: 1px solid #14146b;
+    width: 50%;
+    padding: 7px 7px 7px 15px;
+  }
+}
+
+.mobileTableRow {
+  div {
+    width: 50%;
+    display: inline-block;
+    border: 1px solid #fff;
+  }
+}
+
+.mobileTableWrapper {
+  height: 400px;
+  padding: 10px 25px 10px 4px;
+}
+
+.mobileTableBody {
+  width: 100%;
+  tr {
+    td, th {
+      white-space: normal;
+      padding: 5px !important;
     }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
   }
 }
