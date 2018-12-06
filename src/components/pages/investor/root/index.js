@@ -13,51 +13,71 @@ import CommonLink from "../../../common/investor/blocks/CommonLink"
 import ButtonBlue from "../../../common/investor/blocks/ButtonBlue"
 import css from "./index.module.scss"
 import MobileMenu from "../../../common/investor/MobileMenu"
+import { investorHomePageGetData } from "../../../../store/modules/investorHomePageGetData"
 import { connect } from "react-redux"
+import Loader from '../../../common/general/Loader'
 
 class Index extends Component {
   componentDidMount() {
     checkToken()
+    !this.props.isLoaded &&
+      !this.props.isLoading &&
+      this.props.investorHomePageGetData()
   }
 
   render() {
     return (
       <div>
-        <InvestorHeader />
-        <MainContainer>
-          <Aside>
-            <Block title={"Ваша мощность (?)"} icon={flash}>
-              <Numbers data={"1.201 TH/s"} />
-            </Block>
-            <BlockNom title={"Полученный доход (?)"} icon={btc}>
-              <Numbers data={"1.201 BTC"} />
-              <ButtonViolet info text={"Инвестировать"} />
-            </BlockNom>
-            <Block title={"Баланс кошелька"} icon={wallet}>
-              <Numbers data={"0.221 BTC"} />
-              <CommonLink>Gdf...fdsw</CommonLink>
-              <ButtonBlue info text={"Вывод"} />
-            </Block>
-            <Block title={"Курс"} icon={course}>
-              <ul className={css.courses}>
-                <li>1 TH/s = 0.15 BTC</li>
-                <li>1 BTC = 6 952,04$</li>
-                <li>1 BTC = 399 574P</li>
-              </ul>
-            </Block>
-          </Aside>
-          <Container>{this.props.children}</Container>
-          {this.props.menuIsOpen && <MobileMenu />}
-        </MainContainer>
+        {this.props.isLoading && <Loader />}
+        {this.props.isLoaded && (
+          <div>
+            <InvestorHeader />
+            <MainContainer>
+              <Aside>
+                <Block title={"Ваша мощность (?)"} icon={flash}>
+                  <Numbers data={`${this.props.nHashRate} TH/s`} />
+                </Block>
+                <BlockNom title={"Полученный доход (?)"} icon={btc}>
+                  <Numbers data={`${this.props.nEarnings} BTC`} />
+                  <ButtonViolet info text={"Инвестировать"} />
+                </BlockNom>
+                <Block title={"Баланс кошелька"} icon={wallet}>
+                  <Numbers data={`${this.props.confirmedBalance} BTC`} />
+                  <CommonLink>{this.props.address.substr(0, 12)}</CommonLink>
+                  <ButtonBlue info text={"Вывод"} />
+                </Block>
+                <Block title={"Курс"} icon={course}>
+                  <ul className={css.courses}>
+                    <li>1 TH/s = 0.15 BTC</li>
+                    <li>1 BTC = 6 952,04$</li>
+                    <li>1 BTC = 399 574P</li>
+                  </ul>
+                </Block>
+              </Aside>
+              <Container>{this.props.children}</Container>
+              {this.props.menuIsOpen && <MobileMenu />}
+            </MainContainer>
+          </div>
+        )}
       </div>
     )
   }
 }
 
-const MSTP = state => {
+const mapStateToProps = state => {
   return {
-    menuIsOpen: state.toggleMenu.mobileMenuIsOpen
+    menuIsOpen: state.toggleMenu.mobileMenuIsOpen,
+    isLoading: state.investorHomePageGetData.isLoading,
+    isLoaded: state.investorHomePageGetData.isLoaded,
+    nHashRate: state.investorHomePageGetData.nHashRate,
+    nEarnings: state.investorHomePageGetData.nEarnings,
+    address: state.investorHomePageGetData.address,
+    confirmedBalance: state.investorHomePageGetData.confirmedBalance,
+    pendingBalance: state.investorHomePageGetData.pendingBalance
   }
 }
 
-export default connect(MSTP)(Index)
+export default connect(
+  mapStateToProps,
+  { investorHomePageGetData }
+)(Index)

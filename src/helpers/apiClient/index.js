@@ -1,10 +1,26 @@
+import Cookies from "universal-cookie"
+
 export const post = (url, data) => {
-    return fetch(url, {
+  return fetch(url, {
     method: "post",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .catch(error => error)
+}
+
+
+export const get = url => {
+  const cookies = new Cookies()
+  return fetch(url, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${cookies.get('token')}`
+    }
   })
     .then(res => res.json())
     .catch(error => error)
