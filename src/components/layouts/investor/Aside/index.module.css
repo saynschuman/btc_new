@@ -34,6 +34,12 @@
   display: flex;
 }
 
+.flex {
+  display: flex;
+  margin: 20px auto;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 1250px) {
   .aside {
     float: none;

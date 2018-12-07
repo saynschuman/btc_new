@@ -10,6 +10,17 @@ class Aside extends React.Component {
   state = {
     popupIsOpen: false
   }
+  componentDidMount() {
+    document.addEventListener("keydown", this.escFunction, false)
+  }
+  escFunction = event => {
+    if (event.keyCode === 27) {
+      this.props.hide()
+    }
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction, false)
+  }
   render() {
     return (
       <div>
@@ -54,12 +65,59 @@ class Aside extends React.Component {
             </div>
           </OpertationsPopup>
         )}
+        {this.props.showWithdrawal && (
+          <OpertationsPopup header={"Вывод"} paddingRight={0}>
+            <div className={css.small}>Адрес</div>
+            <CustomInput
+              width={394}
+              value={"Fsdsdrwdefw3t36fgdfgrfgsdrsre23er3f"}
+            />
+            <div className={css.flex} style={{ marginRight: 40 }}>
+              <div className={css.qw}>
+                <div className={css.small}>Сума вывода, BTC</div>
+                <CustomInput minWidth={185} width={50} />
+              </div>
+              <div className={css.qw}>
+                <div className={css.small}>Сбор за транзакцию</div>
+                <CustomInput minWidth={185} width={50} />
+              </div>
+            </div>
+            <br />
+            <div className={css.small}>Итого</div>
+            <div className={css.big}>0.221 BTC</div>
+            <hr className={css.hr} />
+            <br />
+            <div className={css.buttons}>
+              <Button
+                text={"Купить"}
+                marginRight={"20px"}
+                width={125}
+                height={45}
+                background={
+                  "linear-gradient(to left, #015ca9 0%, #005aec 100%)"
+                }
+              />
+              <Button
+                width={125}
+                height={45}
+                text={"Отмена"}
+                onClick={this.props.hide}
+                background={
+                  "linear-gradient(to left, #3a09b4 0%, #5400ff 100%)"
+                }
+              />
+            </div>
+          </OpertationsPopup>
+        )}
       </div>
     )
   }
 }
 
 export default connect(
-  state => ({ showInvest: state.showPopups.showInvest }),
-  {hide}
+  state => ({
+    showInvest: state.showPopups.showInvest,
+    showWithdrawal: state.showPopups.showWithdrawal
+  }),
+  { hide }
 )(Aside)

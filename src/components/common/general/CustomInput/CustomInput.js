@@ -12,7 +12,7 @@ class CustomInput extends React.Component {
   };
   render() {
     return (
-      <input style={{width: this.props.width}}
+      <input style={{width: '100%', maxWidth: `${this.props.width}px`, minWidth: this.props.minWidth}}
         className={css.borderedInput}
         type={this.props.type}
         onChange={e => this.handleChange(e)}
