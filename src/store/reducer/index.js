@@ -7,6 +7,7 @@ import getCourse from "../modules/getCourse"
 import getCourses from "../modules/getCourses"
 import reports from "../modules/reports"
 import settings from "../modules/settings"
+import showPopups from "../modules/showPopups"
 
 export default combineReducers({
   form,
@@ -16,5 +17,6 @@ export default combineReducers({
   getCourse,
   getCourses,
   reports,
-  settings
+  settings,
+  showPopups
 })
