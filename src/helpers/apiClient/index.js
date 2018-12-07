@@ -12,6 +12,18 @@ export const post = (url, data) => {
     .catch(error => error)
 }
 
+
+export const forgotPost = (url, data) => {
+  return fetch(url, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(res => res)
+}
+
 export const get = url => {
   const cookies = new Cookies()
   return fetch(url, {

@@ -6,7 +6,7 @@ import investorHomePageGetData from "../modules/investorHomePageGetData"
 import getCourse from "../modules/getCourse"
 import getCourses from "../modules/getCourses"
 import reports from "../modules/reports"
-import settings from '../modules/settings'
+import settings from "../modules/settings"
 
 export default combineReducers({
   form,
