@@ -9,7 +9,8 @@ import CustomSelect from "../../../../components/common/general/CustomSelect/Cus
 
 class Aside extends React.Component {
   state = {
-    popupIsOpen: false
+    popupIsOpen: false,
+    value: ""
   }
   componentDidMount() {
     document.addEventListener("keydown", this.escFunction, false)
@@ -21,6 +22,11 @@ class Aside extends React.Component {
   }
   componentWillUnmount() {
     document.removeEventListener("keydown", this.escFunction, false)
+  }
+  handleChange = e => {
+    this.setState({
+      value: e.target.value
+    })
   }
   render() {
     return (
@@ -70,16 +76,31 @@ class Aside extends React.Component {
           <OpertationsPopup header={"Вывод"} paddingRight={0}>
             <div className={css.small}>Адрес</div>
             <div className={css.addressInput}>
-              <CustomInput value={"Fsdsdrwdefw3t36fgdfgrfgsdrsre23er3f"} />
+              <CustomInput value={this.props.address} />
             </div>
             <div className={css.flex}>
               <div className={css.qw}>
                 <div className={css.small}>Сума вывода, BTC</div>
-                <CustomInput minWidth={185} width={50} />
+
+                <input
+                  style={{
+                    width: "100%",
+                    maxWidth: `${185}px`,
+                    minWidth: 50
+                  }}
+                  className={css.borderedInput}
+                  type={'number'}
+                  onChange={e => this.handleChange(e)}
+                  value={this.state.value}
+                />
               </div>
               <div className={css.qw}>
                 <div className={css.small}>Сбор за транзакцию</div>
-                <CustomSelect data={rules} value={'Выберите приоритет'}/>
+                <CustomSelect
+                  price={price}
+                  selectedValue={data[0].label}
+                  data={data}
+                />
               </div>
             </div>
             <br />
@@ -114,11 +135,17 @@ class Aside extends React.Component {
   }
 }
 
-const rules = [
+const data = [
   { value: "high", label: "Высокий приоритет" },
   { value: "middle", label: "Средний приоритет" },
   { value: "low", label: "Низкий приоритет" }
-];
+]
+
+const price = {
+  high: 0.014,
+  middle: 0.016,
+  low: 0.018
+}
 
 export default connect(
   state => ({

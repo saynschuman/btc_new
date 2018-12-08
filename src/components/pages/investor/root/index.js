@@ -39,7 +39,7 @@ class Index extends Component {
           <div>
             <InvestorHeader />
             <MainContainer>
-              <Aside>
+              <Aside address={this.props.address}>
                 <Block title={"Ваша мощность (?)"} icon={flash}>
                   <Numbers data={`${this.props.nHashRate} TH/s`} />
                 </Block>
