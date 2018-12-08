@@ -8,6 +8,7 @@ import getCourses from "../modules/getCourses"
 import reports from "../modules/reports"
 import settings from "../modules/settings"
 import showPopups from "../modules/showPopups"
+import hashRatePrice from "../modules/hashRatePrice"
 
 export default combineReducers({
   form,
@@ -18,5 +19,6 @@ export default combineReducers({
   getCourses,
   reports,
   settings,
-  showPopups
+  showPopups,
+  hashRatePrice
 })

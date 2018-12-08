@@ -101,7 +101,7 @@ class Index extends Component {
               <a
                 onClick={this.handleForgot}
                 className={css.forgotLink}
-                href="#"
+                href="/"
               >
                 {this.state.isSignIn ? "Забыли пароль" : "Войти"}
               </a>

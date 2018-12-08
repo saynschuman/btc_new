@@ -36,13 +36,30 @@
 
 .flex {
   display: flex;
-  margin: 20px auto;
   justify-content: space-between;
+  margin-right: 40px;
+}
+
+.addressInput {
+  width: 390px;
+  margin: 12px 0;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1250px) {
   .aside {
     float: none;
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .flex {
+    display: block;
+  }
+  .addressInput {
+    width: calc(100% - 80px);
+    margin: 12px 0;
   }
 }

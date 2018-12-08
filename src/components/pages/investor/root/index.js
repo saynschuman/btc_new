@@ -17,6 +17,7 @@ import { investorHomePageGetData } from "../../../../store/modules/investorHomeP
 import { getCourse } from "../../../../store/modules/getCourse"
 import { connect } from "react-redux"
 import Loader from "../../../common/general/Loader"
+import { getHashRatePrice } from "../../../../store/modules/hashRatePrice"
 
 class Index extends Component {
   componentDidMount() {
@@ -25,6 +26,9 @@ class Index extends Component {
       !this.props.isLoading &&
       this.props.investorHomePageGetData()
     !this.props.isLoaded && !this.props.isLoading && this.props.getCourse()
+    !this.props.isLoaded &&
+      !this.props.isLoading &&
+      this.props.getHashRatePrice()
   }
 
   render() {
@@ -50,7 +54,7 @@ class Index extends Component {
                 </Block>
                 <Block title={"Курс"} icon={course}>
                   <ul className={css.courses}>
-                    <li>1 TH/s = 0.15 BTC</li>
+                    <li>1 TH/s = {this.props.hashRatePrice} BTC</li>
                     <li>1 BTC = {this.props.course.USD}$</li>
                     <li>1 BTC = {this.props.course.RUB}P</li>
                   </ul>
@@ -76,11 +80,12 @@ const mapStateToProps = state => {
     address: state.investorHomePageGetData.address,
     confirmedBalance: state.investorHomePageGetData.confirmedBalance,
     pendingBalance: state.investorHomePageGetData.pendingBalance,
+    hashRatePrice: state.hashRatePrice.hashRatePrice.price,
     course: state.getCourse.course
   }
 }
 
 export default connect(
   mapStateToProps,
-  { investorHomePageGetData, getCourse }
+  { investorHomePageGetData, getCourse, getHashRatePrice }
 )(Index)

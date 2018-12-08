@@ -5,6 +5,7 @@ import CustomInput from "../../../../components/common/general/CustomInput/Custo
 import Button from "../../../../components/common/general/Button"
 import { hide } from "../../../../store/modules/showPopups"
 import { connect } from "react-redux"
+import CustomSelect from "../../../../components/common/general/CustomSelect/CustomSelect"
 
 class Aside extends React.Component {
   state = {
@@ -68,18 +69,17 @@ class Aside extends React.Component {
         {this.props.showWithdrawal && (
           <OpertationsPopup header={"Вывод"} paddingRight={0}>
             <div className={css.small}>Адрес</div>
-            <CustomInput
-              width={394}
-              value={"Fsdsdrwdefw3t36fgdfgrfgsdrsre23er3f"}
-            />
-            <div className={css.flex} style={{ marginRight: 40 }}>
+            <div className={css.addressInput}>
+              <CustomInput value={"Fsdsdrwdefw3t36fgdfgrfgsdrsre23er3f"} />
+            </div>
+            <div className={css.flex}>
               <div className={css.qw}>
                 <div className={css.small}>Сума вывода, BTC</div>
                 <CustomInput minWidth={185} width={50} />
               </div>
               <div className={css.qw}>
                 <div className={css.small}>Сбор за транзакцию</div>
-                <CustomInput minWidth={185} width={50} />
+                <CustomSelect data={rules} value={'Выберите приоритет'}/>
               </div>
             </div>
             <br />
@@ -113,6 +113,12 @@ class Aside extends React.Component {
     )
   }
 }
+
+const rules = [
+  { value: "high", label: "Высокий приоритет" },
+  { value: "middle", label: "Средний приоритет" },
+  { value: "low", label: "Низкий приоритет" }
+];
 
 export default connect(
   state => ({

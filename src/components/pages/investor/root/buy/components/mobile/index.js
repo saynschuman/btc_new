@@ -2,7 +2,6 @@ import React from "react"
 import PerfectScrollbar from "react-perfect-scrollbar"
 import css from "../../index.module.scss"
 import ActiveInvestTableBody from "./ActiveInvestTableBody"
-import { mockData } from "../../../../../../../mocks"
 import Block from "../../../../../../common/investor/blocks/Block"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
@@ -16,16 +15,6 @@ const activeHeaders = [
   `Коэфициент <br /> начисления`,
   "Выплачено",
   "Продажа (?)"
-]
-
-const historyHeaders = [
-  "Дата",
-  "Срок",
-  `Коэфициент <br /> начисления`,
-  "Операция",
-  "Сумма BTC",
-  "Сумма TH/s",
-  "Статус (?)"
 ]
 
 export default props => {

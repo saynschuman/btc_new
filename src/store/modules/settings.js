@@ -1,4 +1,3 @@
-import { put } from "../../helpers/apiClient"
 import Cookies from "universal-cookie"
 
 const CHANGE_PASSWORD_REQUEST = "CHANGE_PASSWORD_REQUEST"
