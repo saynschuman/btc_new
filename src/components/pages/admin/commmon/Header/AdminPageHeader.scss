@@ -23,7 +23,7 @@
         text-align: right;
         width: 15%;
         ul {
-          padding: 31px 0;
+          padding: 32px 0 17px;
           margin: 0;
           li {
             display: inline-block;
@@ -60,6 +60,7 @@
                 padding-left: 30px;
                 padding-right: 60px;
                 position: relative;
+                font-size: 20px;
                 &::after {
                   content: "";
                   position: absolute;
@@ -144,12 +145,13 @@
     li {
       list-style-type: none;
       display: inline-block;
+      font-size: 20px;
       &:first-child {
         color: #fff;
-        width: 200px;
+        width: 255px;
       }
       &:nth-child(2) {
-        width: calc(100% - 302px);
+        width: calc(100% - 388px);
         position: relative;
         &::after {
           content: "";
@@ -165,7 +167,7 @@
       }
       &:last-child {
         color: #2e71f4;
-        width: 102px;
+        width: 133px;
         text-align: right;
       }
     }

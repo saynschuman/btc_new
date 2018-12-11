@@ -32,12 +32,12 @@
     margin-bottom: 43px;
     position: relative;
     .block-header {
-      padding: 20px;
-      padding-left: 45px;
       border-bottom: 1px solid #320a8b;
-      background-color: #000056; 
+      background-color: #000056;
+      padding: 20px 45px;
       .header-title {
         width: 100%;
+        font-size: 20px;
         &.users {
           &:after {
             background-image: url("./img/users.png");

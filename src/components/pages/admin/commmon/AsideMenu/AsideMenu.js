@@ -12,6 +12,9 @@ const Aside = props => {
     localStorage.clear()
     window.location.href = '/'
   }
+  const isActive = ({ isCurrent }) => {
+    return isCurrent ? { className: ['is-active'] } : null
+  }
   return (
     <aside className={classNames({ mobileMenuVisible: props.menuIsOpen })}>
       <div className="mobile-admin-nav">
@@ -27,28 +30,28 @@ const Aside = props => {
       </div>
       <ul>
         <li onClick={props.toggleMobileMenu}>
-          <Link to="homepage">Главная</Link>
+          <Link getProps={isActive} to="homepage">Главная</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'settings'}>Настройка прав администратора</Link>
+          <Link getProps={isActive} to={'settings'}>Настройка прав администратора</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'reports'}>Отчеты</Link>
+          <Link getProps={isActive} to={'reports'}>Отчеты</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'pays'}>Выплаты начислений инвесторам</Link>
+          <Link getProps={isActive} to={'pays'}>Выплаты начислений инвесторам</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'applications'}>Заявки инвесторов на продажу</Link>
+          <Link getProps={isActive} to={'applications'}>Заявки инвесторов на продажу</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'schema'}>Настройка схемы расчета</Link>
+          <Link getProps={isActive} to={'schema'}>Настройка схемы расчета</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'other'}>Прочее</Link>
+          <Link getProps={isActive} to={'other'}>Прочее</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={'news'}>Новости</Link>
+          <Link getProps={isActive} to={'news'}>Новости</Link>
         </li>
       </ul>
     </aside>

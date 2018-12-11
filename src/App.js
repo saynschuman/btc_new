@@ -23,7 +23,7 @@ class App extends Component {
         <LoginAdmin path="/login-admin" />
         <LoginAdmin path="/auth/:token" />
         <RootAdmin path="/admin">
-          <AdminHomepage default />
+          <AdminHomepage path="homepage" />
           {/*<AdminSettings path="settings" />*/}
           {/*<AdminReports path="reports" />*/}
           {/*<AdminPays path="pays" />*/}

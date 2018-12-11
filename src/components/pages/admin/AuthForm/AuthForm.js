@@ -13,7 +13,7 @@ class AuthForm extends React.Component {
   componentDidUpdate() {
     this.props.token &&
       this.props.successLoginAdmin &&
-      window.location.replace("/admin")
+      window.location.replace("/admin/homepage")
   }
   state = {
     id: "",
