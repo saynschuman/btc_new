@@ -1,0 +1,7 @@
+PUT https://atc-bl.nadzor.online/bl198765/investor/moneys/invest/5b328ddc449c8514e42f01b6 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGEwYWQ5Mjc3OTc1MjIxMWZjZTEzNiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImludmVzdG9yIiwiaWF0IjoxNTQ0MTY5NDM2LCJleHAiOjE1NDQxNzMwMzZ9.M6eHPAhDqA28dyjvR55DiWUrMwk3V8CFuebdD_0yBHI  
+Content-Type: application/json
+
+{
+	"hashRateToSell": 1
+}

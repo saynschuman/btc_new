@@ -1,0 +1,9 @@
+POST https://atc-bl.nadzor.online/bl198765/investor/moneys/withdraw HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZjI2ZWZiN2EwMzUxNmRmMmFiMGE5OSIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImludmVzdG9yIiwiaWF0IjoxNTQ0MzA0NDAwLCJleHAiOjE1NDQzMDgwMDB9.Ryco_4N-3auoWW7zaKFb6lXYJuiu7-2u24SadQUYB8w
+Content-Type: application/json
+
+{
+	"toAddress": "mm5ES6sv5xTYWgbnPD3o8j9ywX7MWKbHsR",
+	"amount": 0,
+	"paymentFee": 0
+}

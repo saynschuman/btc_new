@@ -1,0 +1,92 @@
+@import "../../../Mixins/gradient";
+
+.bordered-input {
+  border: 1px solid #3070fd !important;
+  border-radius: 3px;
+  height: 33px;
+  background-color: #00074f;
+}
+
+.report-investors {
+  .settings-header {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+}
+
+.bottom-title-right {
+  text-align: right;
+  padding-right: 12px;
+  margin-bottom: 20px;
+}
+
+.buttons-block {
+  padding: 0 12px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  button {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    padding: 9px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    &:first-child {
+      @include linear-gradient(#025bff, #0a6dc2);
+    }
+    &:nth-child(2) {
+      @include linear-gradient(#025bff, #0a6dc2);
+    }
+    &:last-child {
+      @include linear-gradient(#5400ff, #3b09b8);
+    }
+    &:focus {
+      outline: none
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .setting-footer {
+    padding-top: 10px;
+  }
+  .report-investors {
+    .settings-header {
+      padding-left: 12px;
+      border-bottom: 1px solid #32098a;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .admin-body .admin-block .block-header .header-title:after {
+    right: 5px;
+  }
+  .setting-footer {
+    padding-top: 0px;
+  }
+  .buttons-block {
+    flex-direction: column;
+    display: block;
+    padding: 0;
+    button {
+      margin-bottom: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      min-width: 247px;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: block;
+    }
+  }
+  .bottom-title-right {
+    text-align: center;
+    padding-left: 12px;
+    margin-top: 26px;
+  }
+}

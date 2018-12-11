@@ -1,0 +1,13 @@
+.num {
+    color: #fff;
+    font-size: 47px;
+    font-weight: 700;
+    padding: 10px 0;
+    padding-left: 46px;
+}
+
+@media screen and (max-width: 1250px) {
+    .num {
+        padding-left: 15px;
+    }
+}

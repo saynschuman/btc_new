@@ -1,0 +1,196 @@
+@import "../../../Mixins/gradient";
+
+.violet-button {
+  @include linear-gradient(#5400ff, #3b09b8);
+}
+
+.blue-button {
+  @include linear-gradient(#025bff, #0a6dc2);
+}
+
+
+
+.schema-page {
+  .buttons-block {
+    display: block;
+    button {
+      max-width: 240px;
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+  .settings-table {
+    td {
+      padding: 4px;
+    }
+    .input-58 {
+      input {
+        width: 58px !important;
+      }
+    }
+    .input-84 {
+      input {
+        width: 84px !important;
+      }
+    }
+  }
+  .header-title.title-edit {
+    &:after {
+      background-image: url('./img/settings.png') !important;
+    }
+  }
+  .header-title.title-money {
+    &:after {
+      background-image: url('./img/money.png') !important;
+    }
+  }
+  .left {
+    .settings-body {
+      height: 126px;
+    }
+  }
+  .right {
+    .settings-body {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      tr {
+        th {
+          &:first-child {
+            padding-left: 50px;
+          }
+        }
+        td {
+          &:first-child {
+            padding-left: 50px;
+          }
+        }
+      }
+    }
+  }
+  .settings-body {
+    &.no-pad {
+      padding: 0;
+    }
+    border-bottom: 1px solid #24158b;
+    padding: 56px 47px;
+    height: 220px;
+    .edit-power-q {
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        font-size: 48px;
+        &:nth-child(2) {
+          width: 20%;
+          padding-left: 12px;
+          padding-right: 12px;
+          margin-right: 10px;
+        }
+        .bordered-input {
+          vertical-align: middle;
+          margin-bottom: 6px;
+          height: 55px;
+          display: block;
+          width: calc(100% - 10px);
+          padding: 0 5px;
+          color: #fff;
+          font-size: 20px;
+          min-width: 101px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .settings-footer {
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+}
+
+.settings-schema-bottom-table {
+  td {
+    padding-left: 17px !important;
+  }
+  input {
+    width: 80% !important;
+  }
+}
+
+.schema-save {
+  text-align: center;
+  padding: 13px 23px;
+  padding-top: 11px;
+  height: auto;
+}
+
+@media screen and (max-width: 1630px) {
+  .schema-page .settings-footer {
+    padding-left: 0;
+  }
+  }
+
+@media screen and (max-width: 1600px) {
+.schema-page .buttons-block button {
+  max-width: 174px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+}
+
+@media screen and (max-width: 1400px) {
+  .schema-page .settings-body .edit-power li {
+    font-size: 42px
+  }
+  .schema-page .buttons-block {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .schema-page .settings-body {
+    height: 600px;
+  }
+  .schema-page .settings-body-mobile {
+    padding: 2px;
+  }
+  .schema-page .right .settings-body tr td:first-child {
+    padding-left: 7px;
+  }
+  .invest-period-mobile {
+    padding-bottom: 1px;
+  }
+  .schema-page .right .settings-body tr td:nth-child(even){
+    width: 50%;
+  }
+  .schema-page .left .settings-body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .schema-page .settings-body .edit-power li:nth-child(2) {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .schema-page .settings-body .edit-power li {
+    display: block;
+    padding: 0;
+    input {
+      width: 223px;
+      padding: 0 5px;
+    }
+  }
+  .schema-page .left .settings-body {
+    height: auto !important;
+  }
+  .schema-page .settings-footer {
+    padding-left: 0;
+  }
+}

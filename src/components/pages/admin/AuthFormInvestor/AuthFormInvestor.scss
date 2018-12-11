@@ -1,0 +1,153 @@
+.loginWrapper {
+  width: 100%;
+  max-width: 557px;
+  height: auto;
+  padding: 42px 0;
+  background-color: #fff;
+  display: block;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 2px;
+  margin-bottom: 70px;
+  position: relative;
+  .container {
+    padding: 0 53px;
+  }
+  .logintop {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 40px;
+    color: #505050;
+    font-size: 18px;
+  }
+  .regLink {
+    float: right;
+    font-size: 16px;
+    a {
+      color: #6a9aee;
+      text-decoration: none;
+    }
+  }
+  .loginmain {
+    padding-top: 45px;
+    label {
+      text-align: left;
+      font-size: 16px;
+      color: #505050;
+      display: block;
+      margin-bottom: 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      margin-bottom: 36px;
+      font-size: 16px;
+      color: #505050;
+      padding: 0 30px;
+      height: 41px;
+      background-color: #efefef;
+      border: 1px solid #047bcf;
+      border-radius: 2px;
+      width: 100%;
+      max-width: 390px;
+    }
+    input:focus {
+      outline: none;
+    }
+    input[type="submit"] {
+      font-size: 20px;
+      color: #fff;
+      background-color: #005be2;
+      width: 118px;
+      height: 45px;
+      border: none;
+      border-radius: 36px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 2px 2px 10px rgba(55, 97, 235, 0.9);
+      cursor: pointer;
+    }
+    .forgotLink {
+      font-size: 14px;
+      color: #6a9aee;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      margin-top: 30px;
+    }
+  }
+}
+
+.loader {
+  width: 70px;
+  height: 54px;
+  background-image: url("./img/loader.gif");
+  background-size: 100%;
+  margin-right: 0;
+  position: absolute;
+  right: 21px;
+  margin-top: -73px;
+}
+
+@media screen and (max-width: 768px) {
+  // .loader {
+  //   width: 70px;
+  //   height: 54px;
+  //   background-image: url("./img/loader.gif");
+  //   background-size: 100%;
+  //   position: relative;
+  //   margin-top: -63px;
+  //   float: right;
+  //   margin-right: 99px;
+  // }
+  .loginWrapper {
+    margin-top: 0;
+    width: 90%;
+    padding-top: 30px;
+  }
+  .loginWrapper .regLink {
+    float: none;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+  }
+  .loginWrapper .loginmain input[type="text"],
+  .loginWrapper .loginmain input[type="password"] {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - 60px);
+    margin-bottom: 20px;
+    min-width: 180px;
+  }
+  .loginWrapper .container {
+    padding: 0 20px;
+  }
+  .loginWrapper .logintop {
+    padding-bottom: 31px;
+    font-size: 16px;
+  }
+  .loginWrapper .loginmain {
+    padding-top: 27px;
+  }
+  .loginWrapper .loginmain input[type="submit"] {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 33px;
+    margin-bottom: 15px;
+  }
+  .logintop .container {
+    padding-right: 14px;
+  }
+}
+
+// @media screen and (max-width: 594px) {
+//   .loader {
+//     width: 50px;
+//     height: 36px;
+//     background-size: 100%;
+//     position: relative;
+//     margin-top: -55px;
+//     float: right;
+//     margin-right: 6px;
+//   }
+// }
