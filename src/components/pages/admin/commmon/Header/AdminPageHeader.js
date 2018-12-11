@@ -1,24 +1,25 @@
-import React, { Component } from "react";
-import "./AdminPageHeader.scss";
-import AdminHeader from "./components/AdminHeader";
-import { connect } from "react-redux";
-import { toggleMobileMenu } from "../../../modules/toggleMobileMenu";
-import classNames from "classnames";
+import React, { Component } from "react"
+import "./AdminPageHeader.scss"
+import AdminHeader from "./components/AdminHeader"
+import { Link } from "@reach/router"
+import { connect } from "react-redux"
+import { toggleMobileMenu } from "../../../modules/toggleMobileMenu"
+import classNames from "classnames"
 
 class AdminPageHeader extends Component {
   exit = e => {
-    e.preventDefault();
-    localStorage.clear();
-    window.location.href = "/";
-  };
+    e.preventDefault()
+    localStorage.clear()
+    window.location.href = "/"
+  }
   render() {
     return (
       <div className="header-wrapper admin-page-header">
         <div className="header-inner">
           <div className="left item">
-            <a>
+            <Link to={'/admin/homepage'}>
               <div className="logo" />
-            </a>
+            </Link>
           </div>
           <div className="item menu">
             <AdminHeader />
@@ -40,7 +41,7 @@ class AdminPageHeader extends Component {
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -48,7 +49,7 @@ export default connect(
   state => {
     return {
       menuIsOpen: state.toggleMobileMenu.mobileMenuIsOpen
-    };
+    }
   },
   { toggleMobileMenu }
-)(AdminPageHeader);
+)(AdminPageHeader)
