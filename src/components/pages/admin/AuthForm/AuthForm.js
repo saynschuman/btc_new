@@ -1,7 +1,7 @@
 import React from "react"
 import "./AuthForm.scss"
 import connect from "react-redux/es/connect/connect"
-import { authData } from "../../actions"
+import { authData, authHide } from "../../actions"
 import { successLoginAdmin } from "../../modules/successLoginAdmin"
 import LoginHeader from "../commmon/LoginHeader/LoginHeader"
 import WongData from "../commmon/WrongData/WrongData"
@@ -9,6 +9,15 @@ import WongData from "../commmon/WrongData/WrongData"
 class AuthForm extends React.Component {
   componentDidMount() {
     this.props.token && this.props.successLoginAdmin(this.props.token)
+    document.addEventListener("keydown", this.escFunction, false)
+  }
+  escFunction = event => {
+    if (event.keyCode === 27) {
+      this.props.authHide()
+    }
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction, false)
   }
   componentDidUpdate() {
     this.props.token &&
@@ -67,7 +76,14 @@ class AuthForm extends React.Component {
                 autoComplete="off"
                 value={this.state.password}
               />
-              <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
+              <input
+                onClick={this.handleSubmit}
+                type="submit"
+                disabled={
+                  this.state.id.length < 1 || this.state.password.length < 1
+                }
+                value={"Вход"}
+              />
               {isLoading && !isLoaded && <div className="loader" />}
               <a className="forgotLink" href="/">
                 Забыли пароль?
@@ -80,9 +96,6 @@ class AuthForm extends React.Component {
         {this.props.success !== null && this.props.success !== true && (
           <WongData success={this.props.success} />
         )}
-        {/* {this.props.success !== null &&
-          this.props.success &&
-          window.location.reload()} */}
       </div>
     )
   }
@@ -97,5 +110,5 @@ export default connect(
       successLoginAdmin: state.successLoginAdmin.successLoginAdmin
     }
   },
-  { authData, successLoginAdmin }
+  { authData, successLoginAdmin, authHide }
 )(AuthForm)
