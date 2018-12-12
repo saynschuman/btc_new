@@ -126,7 +126,8 @@
 
 @media screen and (max-width: 1050px) {
   .admin-body {
-    width: calc(100% - 75px);
+    padding: 20px;
+    width: calc(100% - 40px);
   }
 }
 
