@@ -15,6 +15,8 @@ import courseHistory from "./../../components/pages/reducer/courseHistory"
 import adminHomePageData from "./../../components/pages/reducer/adminHomePageData"
 import successLoginAdmin from "../../components/pages/modules/successLoginAdmin"
 import toggleMobileMenu from "./../../components/pages/modules/toggleMobileMenu"
+import admins from "../../components/pages/reducer/admins"
+import investors from "../../components/pages/reducer/investors"
 
 export default combineReducers({
   form,
@@ -32,5 +34,7 @@ export default combineReducers({
   toggleMobileMenu,
   adminHomePageData,
   course,
-  courseHistory
+  courseHistory,
+  admins,
+  investors
 })

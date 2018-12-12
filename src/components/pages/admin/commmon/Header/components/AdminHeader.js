@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { parseJwt } from "../../../../../../helpers/parseJwt"
 
 class AdminHeader extends Component {
   static propTypes = {
@@ -11,7 +12,7 @@ class AdminHeader extends Component {
         <ul>
           <li>Панель администратора</li>
           <li />
-          <li>ID: 36143324</li>
+          <li>ID: {parseJwt(localStorage.getItem("token")).id.slice(0, 7)}</li>
         </ul>
       </div>
     );

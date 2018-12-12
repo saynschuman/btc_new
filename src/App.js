@@ -9,6 +9,7 @@ import LoginAdmin from "./components/pages/admin/AuthForm/AuthForm"
 import "./App.scss"
 import RootAdmin from "./components/pages/admin/admin/RootAdmin"
 import AdminHomepage from "./components/pages/admin/admin/AdminHomepage/AdminHomepage"
+import AdminSettings from "./components/pages/admin/admin/AdminSettings/AdminSettings"
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
         <LoginAdmin path="/auth/:token" />
         <RootAdmin path="/admin">
           <AdminHomepage path="homepage" />
-          {/*<AdminSettings path="settings" />*/}
+          <AdminSettings path="settings" />
           {/*<AdminReports path="reports" />*/}
           {/*<AdminPays path="pays" />*/}
           {/*<Applications path="applications" />*/}

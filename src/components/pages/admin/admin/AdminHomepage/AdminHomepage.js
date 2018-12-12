@@ -159,7 +159,9 @@ class AdminHomepage extends React.Component {
             <div className="block-header">
               <div className="header-title no-ic">График курса BTC</div>
             </div>
-            {this.props.courseHistoryIsLoading && <div style={{paddingLeft: 45, paddingTop: 10}}>Загрузка...</div>}
+            {this.props.courseHistoryIsLoading && (
+              <div style={{ paddingLeft: 45, paddingTop: 10 }}>Загрузка...</div>
+            )}
             {this.props.courseHistoryIsLoaded && (
               <Line data={data} options={options} />
             )}
