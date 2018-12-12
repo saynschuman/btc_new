@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { toggleMobileMenu } from '../../../modules/toggleMobileMenu'
 import classNames from 'classnames'
 import { Link } from '@reach/router'
+import { renderId } from "../../../../../helpers/getAdminId"
 
 const Aside = props => {
   const exit = e => {
@@ -20,7 +21,7 @@ const Aside = props => {
       <div className="mobile-admin-nav">
         <ul className={'nav-top'}>
           <li>Панель администратора</li>
-          <li className={'id-admin'}>ID: 36143324</li>
+          <li className={'id-admin'}>ID: {renderId()}</li>
           <li className="exit admin">
             <a onClick={exit} href="/">
               Выход
