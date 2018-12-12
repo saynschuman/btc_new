@@ -71,7 +71,7 @@ class AdminSettings extends React.Component {
           )}
 
           <div className="settings-footer">
-            <button className={'settings-save'}>Сохранить</button>
+            <button className={'settings-save'}>Добавить</button>
           </div>
         </div>
         <div className="admin-block">
