@@ -10,7 +10,8 @@ import CustomSelect from "../../../../components/common/general/CustomSelect/Cus
 class Aside extends React.Component {
   state = {
     popupIsOpen: false,
-    value: ""
+    value: "",
+    added: ""
   }
   componentDidMount() {
     document.addEventListener("keydown", this.escFunction, false)
@@ -89,7 +90,7 @@ class Aside extends React.Component {
                     minWidth: 50
                   }}
                   className={css.borderedInput}
-                  type={'number'}
+                  type={"number"}
                   onChange={e => this.handleChange(e)}
                   value={this.state.value}
                 />
