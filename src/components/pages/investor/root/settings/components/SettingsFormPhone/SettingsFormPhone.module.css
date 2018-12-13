@@ -45,3 +45,8 @@ input {
 .submit {
     padding-top: 30px;
 }
+
+.cutInput {
+    min-width: 235px;
+    font-size: 16px;
+}

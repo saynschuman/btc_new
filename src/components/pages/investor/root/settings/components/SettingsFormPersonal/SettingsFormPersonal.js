@@ -36,6 +36,7 @@ class SettingsForm extends React.Component {
               <div className={css.span}>(Можно изменить только 1 раз)</div>
             </label>
             <input
+              className={css.cutInput}
               type="text"
               onChange={e => this.handleSurname(e.target.value)}
             />
@@ -45,6 +46,7 @@ class SettingsForm extends React.Component {
               Имя <div className={css.span}>(Можно изменить только 1 раз)</div>
             </label>
             <input
+              className={css.cutInput}
               type="text"
               onChange={e => this.handleName(e.target.value)}
             />

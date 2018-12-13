@@ -51,5 +51,5 @@ export const investorHomePageGetData = () => dispatch => {
         pendingBalance: response.balance.pendingBalance
       }
     })
-  })
+  }).catch(er => console.log(er))
 }

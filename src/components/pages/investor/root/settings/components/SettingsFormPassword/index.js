@@ -33,6 +33,7 @@ class SettingsForm extends React.Component {
           <div className={css.fieldsetLeft}>
             <label htmlFor="">Новый пароль</label>
             <input
+              className={css.cutInput}
               onChange={e => this.handleNewPassword(e.target.value)}
               type="password"
             />
@@ -40,6 +41,7 @@ class SettingsForm extends React.Component {
           <div className={css.fieldsetRight}>
             <label htmlFor="">Старый пароль</label>
             <input
+              className={css.cutInput}
               onChange={e => this.handleOldPassword(e.target.value)}
               type="text"
             />

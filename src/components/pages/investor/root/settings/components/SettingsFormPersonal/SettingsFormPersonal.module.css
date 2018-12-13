@@ -33,6 +33,11 @@ label {
     margin-bottom: 12px;
 }
 
+.cutInput {
+    min-width: 235px;
+    font-size: 16px;
+}
+
 input:focus {
     outline: none
 }

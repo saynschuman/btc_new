@@ -25,7 +25,7 @@ class SettingsForm extends React.Component {
         <div className={css.fields}>
           <div className={css.fieldset}>
             <label htmlFor="">Номер телефона</label>
-            <input type="text" onChange={e => this.handlePhone(e.target.value)}/>
+            <input type="text" onChange={e => this.handlePhone(e.target.value)} className={css.cutInput}/>
           </div>
         </div>
         <div className={css.submit}>
