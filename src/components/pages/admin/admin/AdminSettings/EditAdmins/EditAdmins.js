@@ -49,7 +49,8 @@ class EditAdmins extends React.Component {
           />
         </td>
         <td>
-          <CustomSelect data={rules} value={this.props.rules} />
+          {/*<CustomSelect data={rules} value={this.props.rules} />*/}
+          <CustomSelect rights={this.props.rights} />
         </td>
         <td>
           <CustomInput

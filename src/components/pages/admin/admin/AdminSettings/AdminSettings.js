@@ -40,7 +40,7 @@ class AdminSettings extends React.Component {
                           key={admin.id}
                           id={admin.id}
                           password={admin.password}
-                          rule={admin.rule}
+                          rights={admin.accessRights}
                           email={admin.email}
                         />
                       )

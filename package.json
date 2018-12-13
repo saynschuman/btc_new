@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.6.2",
     "@reach/router": "^1.2.1",
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",
     "moment": "^2.22.2",
     "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
@@ -16,11 +18,13 @@
     "react-redux": "^5.1.1",
     "react-scripts": "2.1.1",
     "react-select": "^2.1.2",
+    "react-select-checked": "^0.1.12",
     "react-table": "^6.8.6",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
+    "selectly": "^0.5.0",
     "universal-cookie": "^3.0.7"
   },
   "scripts": {
