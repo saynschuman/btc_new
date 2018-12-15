@@ -19,9 +19,8 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 120,
     maxWidth: 300,
-    backgroundColor: '#00074f',
-    border: '1px solid #3070fd',
-    textColor: '#fff',
+    backgroundColor: "#00074f",
+    border: "1px solid #3070fd",
     borderRadius: 3
   },
   chips: {
@@ -33,25 +32,30 @@ const styles = theme => ({
   },
   noLabel: {
     marginTop: theme.spacing.unit * 3
+  },
+  text: {
+    textColor: "#fff"
   }
 })
 
-const ITEM_HEIGHT = 48
-const ITEM_PADDING_TOP = 8
 const MenuProps = {
   PaperProps: {
     style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250
+      maxHeight: "100%",
+      overflow: "unset",
+      backgroundColor: "#00074f"
     }
   }
 }
 
 const names = [
-  "Отчеты",
-  "Выплаты начислений инвесторам",
-  "Заявки инвесторов на продажу",
-  "Прочее"
+  "superAdmin",
+  "reports",
+  "payouts",
+  "sellShare",
+  "platform",
+  "news",
+  "other"
 ]
 
 function getStyles(name, that) {
@@ -65,18 +69,16 @@ function getStyles(name, that) {
 
 class MultipleSelect extends React.Component {
   state = {
-    name: []
+    name: this.props.rights || []
   }
-
   handleChange = event => {
     this.setState({ name: event.target.value })
   }
-
   render() {
+    console.log("props", this.props.rights)
     const { classes } = this.props
     return (
       <div className={classes.root}>
-
         <FormControl className={classes.formControl}>
           <Select
             multiple
@@ -85,11 +87,12 @@ class MultipleSelect extends React.Component {
             input={<Input id="select-multiple-checkbox" />}
             renderValue={selected => selected.join(", ")}
             MenuProps={MenuProps}
+            className={'customSelect'}
           >
             {names.map(name => (
-              <MenuItem key={name} value={name}>
-                <Checkbox checked={this.state.name.indexOf(name) > -1} />
+              <MenuItem key={name} value={name} className={'menuItem'}>
                 <ListItemText primary={name} />
+                <Checkbox checked={this.state.name.indexOf(name) > -1} className={'customCheckbox'} />
               </MenuItem>
             ))}
           </Select>
