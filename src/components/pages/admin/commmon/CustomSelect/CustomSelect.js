@@ -9,6 +9,8 @@ import FormControl from "@material-ui/core/FormControl"
 import ListItemText from "@material-ui/core/ListItemText"
 import Select from "@material-ui/core/Select"
 import Checkbox from "@material-ui/core/Checkbox"
+import { Field, reduxForm } from "redux-form"
+import { connect } from "react-redux"
 
 const styles = theme => ({
   root: {
@@ -75,27 +77,37 @@ class MultipleSelect extends React.Component {
     this.setState({ name: event.target.value })
   }
   render() {
-    console.log("props", this.props.rights)
     const { classes } = this.props
     return (
       <div className={classes.root}>
         <FormControl className={classes.formControl}>
-          <Select
-            multiple
-            value={this.state.name}
-            onChange={this.handleChange}
-            input={<Input id="select-multiple-checkbox" />}
-            renderValue={selected => selected.join(", ")}
-            MenuProps={MenuProps}
-            className={'customSelect'}
-          >
-            {names.map(name => (
-              <MenuItem key={name} value={name} className={'menuItem'}>
-                <ListItemText primary={name} />
-                <Checkbox checked={this.state.name.indexOf(name) > -1} className={'customCheckbox'} />
-              </MenuItem>
-            ))}
-          </Select>
+          <Field
+            name={`admin_${this.props.id}`}
+            type={'select'}
+            component={() => {
+              return (
+                <Select
+                  multiple
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  input={<Input id="select-multiple-checkbox" />}
+                  renderValue={selected => selected.join(", ")}
+                  MenuProps={MenuProps}
+                  className={"customSelect"}
+                >
+                  {names.map(name => (
+                    <MenuItem key={name} value={name} className={"menuItem"}>
+                      <ListItemText primary={name} />
+                      <Checkbox
+                        checked={this.state.name.indexOf(name) > -1}
+                        className={"customCheckbox"}
+                      />
+                    </MenuItem>
+                  ))}
+                </Select>
+              )
+            }}
+          />
         </FormControl>
       </div>
     )
@@ -106,4 +118,8 @@ MultipleSelect.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles, { withTheme: true })(MultipleSelect)
+export default withStyles(styles, { withTheme: true })(
+  reduxForm({
+    form: "admins"
+  })(connect(null)(MultipleSelect))
+)

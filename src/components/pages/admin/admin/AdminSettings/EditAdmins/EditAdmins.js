@@ -1,32 +1,26 @@
-import React from "react";
-import CustomInput from "../../../commmon/CustomInput/CustomInput";
-import CustomSelect from "../../../commmon/CustomSelect/CustomSelect";
-import classNames from "classnames";
-
-const rules = [
-  { value: "admin", label: "Админ" },
-  { value: "moderator", label: "Модератор" },
-  { value: "investor", label: "Инвестор" }
-];
+import React from "react"
+import CustomInput from "../../../commmon/CustomInput/CustomInput"
+import CustomSelect from "../../../commmon/CustomSelect/CustomSelect"
+import classNames from "classnames"
 
 class EditAdmins extends React.Component {
   state = {
     cantEdit: true,
     editButton: "Редактировать"
-  };
+  }
   handleEdit = () => {
     if (this.state.cantEdit) {
       this.setState({
         cantEdit: false,
         editButton: "Сохранить"
-      });
+      })
     } else {
       this.setState({
         cantEdit: true,
         editButton: "Редактировать"
-      });
+      })
     }
-  };
+  }
   render() {
     return (
       <tr>
@@ -49,8 +43,7 @@ class EditAdmins extends React.Component {
           />
         </td>
         <td>
-          {/*<CustomSelect data={rules} value={this.props.rules} />*/}
-          <CustomSelect rights={this.props.rights} />
+          <CustomSelect id={this.props.id} rights={this.props.rights} />
         </td>
         <td>
           <CustomInput
@@ -74,8 +67,8 @@ class EditAdmins extends React.Component {
           <div className="close-button-admin" />
         </td>
       </tr>
-    );
+    )
   }
 }
 
-export default EditAdmins;
+export default EditAdmins

@@ -54,19 +54,19 @@ class AdminSettings extends React.Component {
           {this.props.isLoading && <AdminsLoader />}
           {this.props.isLoaded && (
             <div className="settings-body settings-body-mobile">
-              <PerfectScrollbar className={'edit-admins-mobile'}>
-                {this.props.adminList.map(admin => {
-                  return (
-                    <EditAdminsMobile
-                      key={admin.id}
-                      id={admin.id}
-                      password={admin.password}
-                      rule={admin.rule}
-                      email={admin.email}
-                    />
-                  )
-                })}
-              </PerfectScrollbar>
+              {/*<PerfectScrollbar className={'edit-admins-mobile'}>*/}
+                {/*{this.props.adminList.map(admin => {*/}
+                  {/*return (*/}
+                    {/*<EditAdminsMobile*/}
+                      {/*key={admin.id}*/}
+                      {/*id={admin.id}*/}
+                      {/*password={admin.password}*/}
+                      {/*rule={admin.rule}*/}
+                      {/*email={admin.email}*/}
+                    {/*/>*/}
+                  {/*)*/}
+                {/*})}*/}
+              {/*</PerfectScrollbar>*/}
             </div>
           )}
 
